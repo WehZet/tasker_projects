@@ -3,7 +3,7 @@
 <br>(Import by long-pressing on PROFILES-tab in Tasker)
 
 ## Projects
-- [CBM Clipboard Manager](#cnm-clipboard-manager)
+- [CBM Clipboard Manager](#cbm-clipboard-manager)
 - [GSM Greyscale Mode](#GSM-greyscale-mode)
 
 ### CBM Clipboard Manager
