@@ -1,0 +1,1563 @@
+<TaskerData sr="" dvi="1" tv="6.1.16">
+	<dmetric>1080.0,2320.0</dmetric>
+	<Profile sr="prof288" ve="2">
+		<cdate>1664200833859</cdate>
+		<clp>true</clp>
+		<edate>1675462916175</edate>
+		<flags>40</flags>
+		<id>288</id>
+		<limit>true</limit>
+		<mid0>290</mid0>
+		<mid1>289</mid1>
+		<nme>GSM Span</nme>
+		<Time sr="con0">
+			<fromvar>%start</fromvar>
+			<tovar>%stop</tovar>
+		</Time>
+	</Profile>
+	<Profile sr="prof294" ve="2">
+		<cdate>1664214258825</cdate>
+		<clp>true</clp>
+		<edate>1668210205906</edate>
+		<flags>40</flags>
+		<id>294</id>
+		<limit>true</limit>
+		<mid0>310</mid0>
+		<nme>GSM Reset Paused</nme>
+		<Time sr="con0">
+			<fromvar>%pausetime</fromvar>
+			<tovar>%pausetime</tovar>
+		</Time>
+	</Profile>
+	<Profile sr="prof299" ve="2">
+		<cdate>1664217563735</cdate>
+		<clp>true</clp>
+		<edate>1668210224503</edate>
+		<flags>40</flags>
+		<id>299</id>
+		<limit>true</limit>
+		<mid0>310</mid0>
+		<nme>GSM Reset Disable For This Periode</nme>
+		<Time sr="con0">
+			<fromvar>%disabletime</fromvar>
+			<tovar>%disabletime</tovar>
+		</Time>
+	</Profile>
+	<Project sr="proj0" ve="2">
+		<cdate>1664198561653</cdate>
+		<name>Greyscale-Mode</name>
+		<pids>299,288,294</pids>
+		<scenes>GSM Scene</scenes>
+		<tids>287,309,310,231,296,291,285,225,290,282,289,286,312</tids>
+		<Kid sr="Kid">
+			<eperm0>android.permission.WRITE_SECURE_SETTINGS</eperm0>
+			<launchID>285</launchID>
+			<pkg>at.wehzet.greyscalemode</pkg>
+			<vTarg>29</vTarg>
+			<vnme>1.1.2</vnme>
+			<vnum>20</vnum>
+		</Kid>
+		<Img sr="icon" ve="2">
+			<fle>/storage/emulated/0/Icons/greyscale-mode_pink.png</fle>
+		</Img>
+		<ProfileVariable sr="pv0">
+			<clearout>false</clearout>
+			<exportval>22.00</exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>10</pvid>
+			<pvit>pj</pvit>
+			<pvn>%start</pvn>
+			<pvt>ti</pvt>
+			<pvv>22.00</pvv>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv1">
+			<clearout>false</clearout>
+			<exportval>06.00</exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>10</pvid>
+			<pvit>pj</pvit>
+			<pvn>%stop</pvn>
+			<pvt>ti</pvt>
+			<pvv>06.00</pvv>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv2">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>10</pvid>
+			<pvit>pj</pvit>
+			<pvn>%pausetime</pvn>
+			<pvt>ti</pvt>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv3">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>10</pvid>
+			<pvit>pj</pvit>
+			<pvn>%disabletime</pvn>
+			<pvt>ti</pvt>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv4">
+			<clearout>false</clearout>
+			<exportval>#FF007828</exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd>Choose your favourite color :)</pvd>
+			<pvdn></pvdn>
+			<pvid>10</pvid>
+			<pvit>pj</pvit>
+			<pvn>%bordercolor</pvn>
+			<pvt>cl</pvt>
+			<pvv>#FF007828</pvv>
+			<strout>true</strout>
+		</ProfileVariable>
+	</Project>
+	<Scene sr="sceneGSM Scene">
+		<cdate>1607867102107</cdate>
+		<edate>1675463624126</edate>
+		<gridSize>20</gridSize>
+		<heightLand>1080</heightLand>
+		<heightPort>2400</heightPort>
+		<nme>GSM Scene</nme>
+		<widthLand>1080</widthLand>
+		<widthPort>1080</widthPort>
+		<RectElement sr="elements0">
+			<flags>4</flags>
+			<geom>240,600,600,820,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">BgGesamt</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">%bggesamtcolor</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="4"/>
+			<Str sr="arg5" ve="3">%bordercolor</Str>
+			<Int sr="arg6" val="28"/>
+			<Int sr="arg7" val="0"/>
+		</RectElement>
+		<TextElement sr="elements1" ve="3">
+			<flags>4</flags>
+			<geom>240,600,600,100,140,0,320,80</geom>
+			<Str sr="arg0" ve="3">TextHeadline</Str>
+			<Str sr="arg1" ve="3">Greyscale-Mode</Str>
+			<Int sr="arg2" val="22"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+		</TextElement>
+		<RectElement sr="elements10">
+			<flags>4</flags>
+			<geom>320,1120,440,80,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">FgPause</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">%bgabschnittcolor</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3">%bordercolor</Str>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+		</RectElement>
+		<RectElement sr="elements11">
+			<flags>4</flags>
+			<geom>250,1220,580,80,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">FgDisabled</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">%bgabschnittcolor</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3">%bordercolor</Str>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+		</RectElement>
+		<RectElement sr="elements12">
+			<flags>4</flags>
+			<geom>240,600,600,820,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">BgGesamtTransparent</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">#00FFFFFF</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3">#FF4B4B4B</Str>
+			<Int sr="arg6" val="28"/>
+			<Int sr="arg7" val="0"/>
+		</RectElement>
+		<SwitchElement sr="elements13">
+			<checkchangeTask>282</checkchangeTask>
+			<flags>4</flags>
+			<geom>470,750,140,80,0,20,140,120</geom>
+			<Str sr="arg0" ve="3">SwitchGSMProfile</Str>
+			<Int sr="arg1" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</SwitchElement>
+		<TextElement sr="elements14" ve="3">
+			<flags>4</flags>
+			<geom>590,900,170,80,140,0,320,80</geom>
+			<Str sr="arg0" ve="3">ShowStart</Str>
+			<Str sr="arg1" ve="3">%start</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3">%bgtimecolor</Str>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="20"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</TextElement>
+		<TextElement sr="elements15" ve="3">
+			<flags>4</flags>
+			<geom>590,1000,170,80,140,0,320,80</geom>
+			<Str sr="arg0" ve="3">ShowStop</Str>
+			<Str sr="arg1" ve="3">%stop</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3">%bgtimecolor</Str>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="20"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</TextElement>
+		<TextElement sr="elements16" ve="3">
+			<clickTask>309</clickTask>
+			<flags>4</flags>
+			<geom>260,1320,150,80,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">TextReset</Str>
+			<Str sr="arg1" ve="3">Reset</Str>
+			<Int sr="arg2" val="10"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="4"/>
+				<Str sr="arg5" ve="3">%bordercolor</Str>
+				<Int sr="arg6" val="20"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</TextElement>
+		<TextElement sr="elements17" ve="3">
+			<clickTask>291</clickTask>
+			<flags>4</flags>
+			<geom>670,1320,150,80,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">TextClose</Str>
+			<Str sr="arg1" ve="3">Close</Str>
+			<Int sr="arg2" val="14"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="4"/>
+				<Str sr="arg5" ve="3">%bordercolor</Str>
+				<Int sr="arg6" val="20"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</TextElement>
+		<RectElement sr="elements18">
+			<clickTask>286</clickTask>
+			<flags>4</flags>
+			<geom>590,900,170,80,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">RectStart</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3">#FF000000</Str>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+		</RectElement>
+		<RectElement sr="elements19">
+			<clickTask>287</clickTask>
+			<flags>4</flags>
+			<geom>590,1000,170,80,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">RectStop</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">#00333333</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3">#FF000000</Str>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+		</RectElement>
+		<TextElement sr="elements2" ve="3">
+			<flags>4</flags>
+			<geom>370,750,100,80,140,0,320,80</geom>
+			<Str sr="arg0" ve="3">TextOff</Str>
+			<Str sr="arg1" ve="3">Off</Str>
+			<Int sr="arg2" val="14"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="4"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+		</TextElement>
+		<TextElement sr="elements20" ve="3">
+			<clickTask>231</clickTask>
+			<flags>4</flags>
+			<geom>420,1320,240,80,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">TextChangecolor</Str>
+			<Str sr="arg1" ve="3">Change Color</Str>
+			<Int sr="arg2" val="10"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="4"/>
+				<Str sr="arg5" ve="3">%bordercolor</Str>
+				<Int sr="arg6" val="20"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</TextElement>
+		<TextElement sr="elements3" ve="3">
+			<flags>4</flags>
+			<geom>610,750,100,80,140,0,320,80</geom>
+			<Str sr="arg0" ve="3">TextOn</Str>
+			<Str sr="arg1" ve="3">On</Str>
+			<Int sr="arg2" val="14"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+		</TextElement>
+		<RectElement sr="elements4">
+			<flags>4</flags>
+			<geom>290,880,500,220,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">BgSectionTimes</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">%bgabschnittcolor</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="4"/>
+			<Str sr="arg5" ve="3">%bordercolor</Str>
+			<Int sr="arg6" val="28"/>
+			<Int sr="arg7" val="0"/>
+		</RectElement>
+		<TextElement sr="elements5" ve="3">
+			<flags>4</flags>
+			<geom>320,900,250,80,140,0,320,80</geom>
+			<Str sr="arg0" ve="3">TextStart</Str>
+			<Str sr="arg1" ve="3">Start Time:</Str>
+			<Int sr="arg2" val="14"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+		</TextElement>
+		<TextElement sr="elements6" ve="3">
+			<flags>4</flags>
+			<geom>320,1000,250,80,140,0,320,80</geom>
+			<Str sr="arg0" ve="3">TextStop</Str>
+			<Str sr="arg1" ve="3">Stop Time:</Str>
+			<Int sr="arg2" val="14"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+		</TextElement>
+		<TextElement sr="elements7" ve="3">
+			<flags>4</flags>
+			<geom>320,1120,250,80,140,0,320,80</geom>
+			<Str sr="arg0" ve="3">TextPaused</Str>
+			<Str sr="arg1" ve="3">Paused Till:</Str>
+			<Int sr="arg2" val="14"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">%textpausedisablecolor</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</TextElement>
+		<TextElement sr="elements8" ve="3">
+			<flags>4</flags>
+			<geom>590,1120,170,80,140,0,320,80</geom>
+			<Str sr="arg0" ve="3">ShowPauseTime</Str>
+			<Str sr="arg1" ve="3">%pausetimeconverted</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">%textpausedisablecolor</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+		</TextElement>
+		<TextElement sr="elements9" ve="3">
+			<flags>4</flags>
+			<geom>250,1220,580,80,140,0,320,80</geom>
+			<Str sr="arg0" ve="3">TextDisabled</Str>
+			<Str sr="arg1" ve="3">Disabled for this Periode</Str>
+			<Int sr="arg2" val="14"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">%textpausedisablecolor</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+		</TextElement>
+		<PropertiesElement sr="props">
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">#002F2F2F</Str>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">Settings</Str>
+			<Str sr="arg5" ve="3"/>
+			<Img sr="arg6" ve="2"/>
+			<Str sr="arg7" ve="3"/>
+		</PropertiesElement>
+	</Scene>
+	<Task sr="task225">
+		<cdate>1664287207353</cdate>
+		<edate>1675463248344</edate>
+		<id>225</id>
+		<nme>GSM Change Border Color</nme>
+		<pri>100</pri>
+		<Kid sr="Kid">
+			<launchID>225</launchID>
+			<pkg>at.wehzet.test</pkg>
+			<vTarg>29</vTarg>
+			<vnme>1.0</vnme>
+		</Kid>
+		<Action sr="act0" ve="7">
+			<code>390</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%input
+Input
+The text that was retrieved from the dialog&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">Color</Str>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="30"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%bordercolor</Str>
+			<Str sr="arg1" ve="3">%input</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%err</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Color changed</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">%input</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%err</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Keep old setting</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Nothing changed</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%err</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_image_colorize</nme>
+			<tint>-1</tint>
+		</Img>
+	</Task>
+	<Task sr="task231">
+		<cdate>1664203449595</cdate>
+		<edate>1664203449595</edate>
+		<id>231</id>
+		<pri>104</pri>
+		<Action sr="act0" ve="7">
+			<code>30</code>
+			<Int sr="arg0" val="150"/>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>49</code>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">GSM Change Border Color</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">GSM Start Scene</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task282">
+		<cdate>1659090810176</cdate>
+		<edate>1659090810176</edate>
+		<id>282</id>
+		<pri>102</pri>
+		<Action sr="act0" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%PENABLED</lhs>
+					<op>2</op>
+					<rhs>*GSM Span*</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">GSM Span</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>50</code>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+			<Str sr="arg1" ve="3">SwitchGSMProfile</Str>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">GSM Reset Pause-Disable</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">GSM Span</Str>
+			<Int sr="arg1" val="1"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>30</code>
+			<on>false</on>
+			<Int sr="arg0" val="300"/>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>50</code>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+			<Str sr="arg1" ve="3">SwitchGSMProfile</Str>
+			<Int sr="arg2" val="1"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>38</code>
+		</Action>
+	</Task>
+	<Task sr="task285">
+		<cdate>1607868844776</cdate>
+		<edate>1675462924212</edate>
+		<id>285</id>
+		<nme>GSM Start Scene</nme>
+		<pri>100</pri>
+		<Kid sr="Kid">
+			<launchID>285</launchID>
+			<pkg>at.hgft.hgft</pkg>
+			<vTarg>29</vTarg>
+			<vnme>1.0</vnme>
+		</Kid>
+		<Action sr="act0" ve="7">
+			<code>389</code>
+			<label>Set colors for backgrounds, borders, texts...</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""/&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%bgabschnittcolor
+%bggesamtcolor
+%bgtimecolor
+%textpausedisablecolor</Str>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">#FF2F2F2F
+#FF2F2F2F
+#FF5F5F5F
+#FFE80000</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<label>Convert %pausetime to readable format (HH.mm)</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pausetime</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>596</code>
+			<Str sr="arg0" ve="3">%pausetime</Str>
+			<Int sr="arg1" val="4"/>
+			<Str sr="arg2" ve="3">%pausetimeconverted</Str>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>394</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%pausetimeconverted
+00. Pausetimeconverted
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%dt_millis
+1. MilliSeconds
+Milliseconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%dt_seconds
+2. Seconds
+Seconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%dt_day_of_month
+3. Day Of Month
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%dt_month_of_year
+4. Month Of Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%dt_year
+5. Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg2" ve="3">%pausetimeconverted</Str>
+			<Str sr="arg3" ve="3">dd.MM.yy HH.mm</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3">HH.mm</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%pausetimeconverted</Str>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>47</code>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg2" val="100"/>
+			<Int sr="arg3" val="100"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>65</code>
+			<label>Show/dont show pause text if %pausetime is set/not set</label>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+			<Str sr="arg1" ve="3">FgPause</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pausetime</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>65</code>
+			<label>Show/dont show disabled text if %disabletime is set/not set</label>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+			<Str sr="arg1" ve="3">FgDisabled</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%disabletime</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>50</code>
+			<label>Set current status of the "GSM Span" profil slider</label>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+			<Str sr="arg1" ve="3">SwitchGSMProfile</Str>
+			<Int sr="arg2">
+				<var>1</var>
+			</Int>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%PENABLED</lhs>
+					<op>2</op>
+					<rhs>*GSM Span*</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Img sr="icn" ve="2">
+			<fle>/storage/emulated/0/Icons/greyscale-mode_pink.png</fle>
+		</Img>
+	</Task>
+	<Task sr="task286">
+		<cdate>1664200499788</cdate>
+		<edate>1664200499788</edate>
+		<id>286</id>
+		<pri>102</pri>
+		<Action sr="act0" ve="7">
+			<code>49</code>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>390</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%input
+Input
+The text that was retrieved from the dialog&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">Time</Str>
+			<Str sr="arg2" ve="3">Start Time</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="30"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%start</Str>
+			<Str sr="arg1" ve="3">%input</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%err</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Keep old setting</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Nothing changed</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%err</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">GSM Start Scene</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task287">
+		<cdate>1664200499788</cdate>
+		<edate>1664200499788</edate>
+		<id>287</id>
+		<pri>102</pri>
+		<Action sr="act0" ve="7">
+			<code>49</code>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>390</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%input
+Input
+The text that was retrieved from the dialog&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">Time</Str>
+			<Str sr="arg2" ve="3">Stop Time</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="30"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%stop</Str>
+			<Str sr="arg1" ve="3">%input</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%err</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Keep old setting</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Nothing changed</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%err</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">GSM Start Scene</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task289">
+		<cdate>1664201062119</cdate>
+		<edate>1675462916175</edate>
+		<id>289</id>
+		<Action sr="act0" ve="7">
+			<code>235</code>
+			<label>Turn off greyscale</label>
+			<Int sr="arg0" val="1"/>
+			<Str sr="arg1" ve="3">accessibility_display_daltonizer_enabled</Str>
+			<Str sr="arg2" ve="3">0</Str>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>779</code>
+			<Str sr="arg0" ve="3">Greyscale-Mode On</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task290">
+		<cdate>1664201081210</cdate>
+		<edate>1675462914399</edate>
+		<id>290</id>
+		<Action sr="act0" ve="7">
+			<code>235</code>
+			<label>Turn on greyscale</label>
+			<Int sr="arg0" val="1"/>
+			<Str sr="arg1" ve="3">accessibility_display_daltonizer_enabled</Str>
+			<Str sr="arg2" ve="3">1</Str>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%pausetime</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%disabletime</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">GSM Reset Paused</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">GSM Reset Disable For This Periode</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>523</code>
+			<Str sr="arg0" ve="3">Greyscale-Mode On</Str>
+			<Str sr="arg1" ve="3"/>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3">totally silent</Str>
+			<Img sr="arg2" ve="2">
+				<nme>mw_image_brightness_4</nme>
+			</Img>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<Str sr="arg9" ve="3"/>
+			<ListElementItem sr="item0">
+				<label>Pause 30 mins</label>
+				<Action sr="action" ve="7">
+					<code>130</code>
+					<Str sr="arg0" ve="3">GSM Pause-Disable</Str>
+					<Int sr="arg1">
+						<var>%priority</var>
+					</Int>
+					<Int sr="arg10" val="1"/>
+					<Str sr="arg2" ve="3">pause</Str>
+					<Str sr="arg3" ve="3"/>
+					<Str sr="arg4" ve="3"/>
+					<Int sr="arg5" val="0"/>
+					<Int sr="arg6" val="0"/>
+					<Str sr="arg7" ve="3"/>
+					<Int sr="arg8" val="0"/>
+					<Int sr="arg9" val="0"/>
+				</Action>
+				<Img sr="icon" ve="2">
+					<nme>mw_av_forward_30</nme>
+					<tint>-1</tint>
+				</Img>
+			</ListElementItem>
+			<ListElementItem sr="item1">
+				<label>Disable For This Periode</label>
+				<Action sr="action" ve="7">
+					<code>130</code>
+					<Str sr="arg0" ve="3">GSM Pause-Disable</Str>
+					<Int sr="arg1">
+						<var>%priority</var>
+					</Int>
+					<Int sr="arg10" val="1"/>
+					<Str sr="arg2" ve="3">disable</Str>
+					<Str sr="arg3" ve="3"/>
+					<Str sr="arg4" ve="3"/>
+					<Int sr="arg5" val="0"/>
+					<Int sr="arg6" val="0"/>
+					<Str sr="arg7" ve="3"/>
+					<Int sr="arg8" val="0"/>
+					<Int sr="arg9" val="0"/>
+				</Action>
+				<Img sr="icon" ve="2">
+					<nme>mw_navigation_close</nme>
+					<tint>-1</tint>
+				</Img>
+			</ListElementItem>
+		</Action>
+	</Task>
+	<Task sr="task291">
+		<cdate>1664203449595</cdate>
+		<edate>1664203449595</edate>
+		<id>291</id>
+		<pri>106</pri>
+		<Action sr="act0" ve="7">
+			<code>30</code>
+			<Int sr="arg0" val="150"/>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>49</code>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+		</Action>
+	</Task>
+	<Task sr="task296">
+		<cdate>1664214386423</cdate>
+		<edate>1675462935980</edate>
+		<id>296</id>
+		<nme>GSM Pause-Disable</nme>
+		<Action sr="act0" ve="7">
+			<code>513</code>
+			<se>false</se>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>37</code>
+			<label>Coming from notification (pause 30 mins)</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>pause</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">GSM Reset Disable For This Periode</Str>
+			<Int sr="arg1" val="1"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>235</code>
+			<Int sr="arg0" val="1"/>
+			<Str sr="arg1" ve="3">accessibility_display_daltonizer_enabled</Str>
+			<Str sr="arg2" ve="3">0</Str>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>779</code>
+			<Str sr="arg0" ve="3">Greyscale-Mode On</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>547</code>
+			<label>Set the time when pause ends (now + 30 min (1800 s))</label>
+			<Str sr="arg0" ve="3">%pausetime</Str>
+			<Str sr="arg1" ve="3">%TIMES+1800</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">GSM Reset Paused</Str>
+			<Int sr="arg1" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>43</code>
+			<label>Coming from notification (disable for this periode)</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>disable</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>590</code>
+			<label>Split the stop time to hour (%stop1 - HH eg.08) and minutes (%stop2 - mm eg.35)</label>
+			<Str sr="arg0" ve="3">%stop</Str>
+			<Str sr="arg1" ve="3">.</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>547</code>
+			<label>Calculating hours and minutes to a total minutes value
+Additionally adding "1" + stop time + 1 minute</label>
+			<Str sr="arg0" ve="3">%minutestotal</Str>
+			<Str sr="arg1" ve="3">%stop1*60+%stop2+1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>547</code>
+			<label>Calculting the hour from "stop time +1"</label>
+			<Str sr="arg0" ve="3">%hours</Str>
+			<Str sr="arg1" ve="3">(%minutestotal-%minutestotal%60)/60</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>547</code>
+			<label>Calculting the minutes from "stop time +1"</label>
+			<Str sr="arg0" ve="3">%minutes</Str>
+			<Str sr="arg1" ve="3">%minutestotal%60</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>394</code>
+			<label>Setting %disabletime to the "stop time + 1" with the correct format</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%disabletime
+00. Disabletime
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%dt_millis
+1. MilliSeconds
+Milliseconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%dt_seconds
+2. Seconds
+Seconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%dt_day_of_month
+3. Day Of Month
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%dt_month_of_year
+4. Month Of Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%dt_year
+5. Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg2" ve="3">%hours.%minutes</Str>
+			<Str sr="arg3" ve="3">HH.m</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3">HH.mm</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%disabletime</Str>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task309">
+		<cdate>1664203449595</cdate>
+		<edate>1664203449595</edate>
+		<id>309</id>
+		<pri>102</pri>
+		<Action sr="act0" ve="7">
+			<code>50</code>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+			<Str sr="arg1" ve="3">SwitchGSMProfile</Str>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">GSM Reset Pause-Disable</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">reset</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>49</code>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">GSM Start Scene</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task310">
+		<cdate>1664259240383</cdate>
+		<edate>1675463270624</edate>
+		<id>310</id>
+		<nme>GSM Reset Pause-Disable</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>37</code>
+			<label>Resetting "pause" if it is on</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pausetime</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%pausetime</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%start</Str>
+			<Str sr="arg1" ve="3">22.00</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%stop</Str>
+			<Str sr="arg1" ve="3">06.00</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%bordercolor</Str>
+			<Str sr="arg1" ve="3">#FF007828</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">GSM Span</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>50</code>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+			<Str sr="arg1" ve="3">SwitchGSMProfile</Str>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>235</code>
+			<label>Turn off greyscale</label>
+			<Int sr="arg0" val="1"/>
+			<Str sr="arg1" ve="3">accessibility_display_daltonizer_enabled</Str>
+			<Str sr="arg2" ve="3">0</Str>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+			<Str sr="arg1" ve="3">FgPause</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="250"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">GSM Reset Paused</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>43</code>
+			<label>Resetting "disabled" if it is on</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%disabletime</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%disabletime</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">GSM Scene</Str>
+			<Str sr="arg1" ve="3">FgDisabled</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="250"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">GSM Reset Disable For This Periode</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<label>Coming from "Reset" button in scene</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>reset</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+	</Task>
+	<Task sr="task312">
+		<cdate>1660506336569</cdate>
+		<edate>1675286613151</edate>
+		<id>312</id>
+		<nme>GSM Info</nme>
+		<Action sr="act0" ve="7">
+			<code>300</code>
+			<label>&lt;h3&gt;&lt;font color=red&gt;Greyscale-Mode&lt;/font&gt;&lt;/h3&gt;&lt;br&gt;&lt;h5&gt;&lt;font color=green&gt;v1.1.2&lt;br&gt;by WehZet&lt;br&gt;&lt;br&gt;Hope you like it!&lt;br&gt;Any problems with the Greyscale-Mode? Contact me on Reddit: u/WehZet &lt;/h5&gt;&lt;/font&gt;</label>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;ideas&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;
+&lt;br/&gt;
+&lt;/b&gt;</label>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v1.1.2&lt;/font&gt;&lt;/h4&gt;
+&lt;h5 align="left"&gt;1) included in the Reset Task a "accessibility_display_daltonizer_enabled" to 0 to try to Bugfix the bug where the greyscale mode don't turns off
+&lt;/h5&gt;</label>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v1.1.1&lt;/font&gt;&lt;/h4&gt;
+&lt;h5 align="left"&gt;1) smaller text and bigger text fields. Better visibility with display zoom and bigger text size in Android options (if not set to very big...)
+&lt;/h5&gt;</label>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v1.1.0&lt;/font&gt;&lt;/h4&gt;
+&lt;h5 align="left"&gt;1) added "Change Color" button, with which you can change the border color of the app-scene&lt;br/&gt;
+2) "Reset" button will now reset everything the standard&lt;br/&gt;
+- start and stop time&lt;br/&gt;
+- border color&lt;br/&gt;
+- "paused till" and "disabled to next periode" times&lt;br/&gt;
+   * turn off the Greyscale-mode
+&lt;/h5&gt;</label>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v1.0.0&lt;/font&gt;&lt;/h4&gt;
+&lt;h5&gt;first version&lt;/h5&gt;</label>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_action_info_outline</nme>
+		</Img>
+	</Task>
+</TaskerData>
