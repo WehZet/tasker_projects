@@ -7,7 +7,11 @@
 - [GSM Greyscale Mode](#GSM-greyscale-mode)
 
 ### CBM Clipboard Manager
-A clipboard which stores the last clips into a SQLite database for later use.
+A Simple Clipboard Manager using List Dialogs.
+Stores the clipboard texts in a SQlite database
+The number of stored entries can be chosen at the import (project variable) and in a separate task (included).
+Single Entries can saved in an extra table of the databas, so they will not be overwritten if the clipborad array is full.
+Put the task "Clipboard Manager" into your Quick Settings and use the Clipboard Manager everywhere you want.
 
 ### GSM Greyscale Mode
 A little project to implement the greyscale mode.
