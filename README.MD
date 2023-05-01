@@ -4,7 +4,8 @@
 
 ## Projects
 - [CBM Clipboard Manager](#cbm-clipboard-manager)
-- [GSM Greyscale Mode](#GSM-greyscale-mode)
+- [GSM Greyscale Mode](#gsm-greyscale-mode)
+- [Working Time Tracker](#working-time-tracker)
 
 ### CBM Clipboard Manager
 A Simple Clipboard Manager using List Dialogs.<br>
@@ -16,3 +17,6 @@ Put the task "Clipboard Manager" into your Quick Settings and use the Clipboard 
 ### GSM Greyscale Mode
 A little project to implement the greyscale mode.<br>
 On some phones it is coupled with the sleeping mode. This project can use the greyscale mode without sleeping mode.
+
+### Working Time Tracker
+Working Time Tracker is a simple Tasker scene for tracking the working time with the possibility to additionally track pause times. After recording it sends the data to Google Sheets.
