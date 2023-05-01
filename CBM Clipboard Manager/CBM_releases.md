@@ -1,3 +1,9 @@
+A Simple Clipboard Manager using List Dialogs.<br>
+Stores the clipboard texts in a SQlite database.<br>
+The number of stored entries can be chosen at the import (project variable) and in a separate task (included).<br>
+Single Entries can saved in an extra table of the databas, so they will not be overwritten if the clipborad array is full.<br>
+Put the task "Clipboard Manager" into your Quick Settings and use the Clipboard Manager everywhere you want.
+
 ## v2.5.2
 07.03.2023
 1) fixed problem where an error occurs at writing the new Clipboard content into SQL database when the Clip contains a ' (single quote)

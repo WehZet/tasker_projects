@@ -1,3 +1,6 @@
+A little project to implement the greyscale mode.<br>
+On some phones it is coupled with the sleeping mode. This project can use the greyscale mode without sleeping mode.
+
 ## v1.1.2
 1) included in the Reset Task a "accessibility_display_daltonizer_enabled" to 0 to try to Bugfix the bug where the greyscale mode don't turns off
 
