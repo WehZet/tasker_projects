@@ -2,7 +2,7 @@ Working Time Tracker is a simple Tasker scene for tracking the working time with
 
 ## v0.2.1
 12.05.2023<br/>
-1) corrected flow of reset variable when
+1) corrected flow of reset variable when resetting
 2) if pause is active, it is not anymore possible to end working via NFC resetting
 
 ## v0.2<br/>
