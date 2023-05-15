@@ -1,5 +1,11 @@
 Working Time Tracker is a simple Tasker scene for tracking the working time with the possibility to additionally track pause times. After recording it sends the data to Google Sheets.
 
+## v0.3.1
+15.05.2023<br/>
+1) fixed failure where "now" will be set as end time even when choosing end time by user
+2) setting Pause to 0 before uploading and notification for correct showing
+3) fixed problem where pause times where rounded up
+
 ## v0.3.0
 14.05.2023<br/>
 1) Added button to change the start time
