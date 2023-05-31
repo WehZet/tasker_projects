@@ -1,0 +1,3004 @@
+<TaskerData sr="" dvi="1" tv="6.2.2-beta">
+	<Profile sr="prof84" ve="2">
+		<cdate>1660509894195</cdate>
+		<clp>true</clp>
+		<edate>1685518484931</edate>
+		<flags>8</flags>
+		<id>84</id>
+		<mid0>302</mid0>
+		<nme>CBM Clipboard Changed</nme>
+		<Event sr="con0" ve="2">
+			<code>2097</code>
+			<pri>0</pri>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%cl_extras
+Extras
+Optional extra info in JSON format that the clipboard may contains&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%cl_html_text
+HTML Text
+Current clipboard text if set as HTML text&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%cl_image_uri
+Image URI
+If the URI corresponds to an image, this will have a value&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%cl_mimetypes()
+Mime Type
+The types of data that the clipboard contains&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%cl_text
+Text
+Current clipboard text&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%cl_uri
+URI
+Current clipboard URI (could be image or something else)&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+		</Event>
+	</Profile>
+	<Project sr="proj0" ve="2">
+		<cdate>1660293358925</cdate>
+		<name>Clipboard Manager</name>
+		<pids>84</pids>
+		<tids>306,304,379,307,303,302,327,328,334,305,235,267,47</tids>
+		<Share sr="Share">
+			<b>false</b>
+			<d>v2.6.0&lt;br/&gt;by WehZet&lt;br/&gt;&lt;br/&gt;A Simple Clipboard Manager using List Dialogs.&lt;br/&gt;Stores the clipboard texts in a SQlite database&lt;br/&gt;The number of stored entries can be chosen at the import (project variable) and in a separate task (included).&lt;br/&gt;Single Entries can saved in an extra table of the databas, so they will not be overwritten if the clipborad array is full.&lt;br/&gt;&lt;br/&gt;Put the task "Clipboard Manager" into your Quick Settings and use the Clipboard Manager everywhere you want.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;RELEASES:&lt;br/&gt;
+
+&lt;h4&gt;v2.6.0&lt;br/&gt;31.05.2023&lt;/h4&gt;
+&lt;b&gt;1) added a prompt which ask if you like to open in YouTube if the new clipboard content is a YouTube link. (original code from "konieckropka") &lt;/b&gt;
+
+&lt;h4&gt;v2.5.2&lt;br/&gt;07.03.2023&lt;/h4&gt;&lt;b&gt;1) fixed problem where an error occurs at writing the new Clipboard content into SQL database when the Clip contains a ' (single quote) &lt;/b&gt;&lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;v2.5.1&lt;br/&gt;18.02.2023&lt;/h4&gt;&lt;b&gt;1) optimized the parsing/formatting of the date for the "Save or Delete Entry" dialog&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;v2.5.0&lt;br/&gt;16.02.2023&lt;br/&gt;&lt;/h4&gt;&lt;b&gt;1) now showing within the "Save or Delete Entry" dialog the date and time when the chosen entry was saved and the short preview of the entry&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;v2.4.4&lt;br/&gt;03.02.2023&lt;br/&gt;&lt;/h4&gt;&lt;b&gt;1) fixed issue where the Clipboard Manager was cancelled in some situations&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;v2.4.3&lt;br/03.02.2023&lt;br/&gt;&gt;&lt;/h4&gt;&lt;b&gt;1) fixed issue where not coming back to Clipboard Manager after deleting an entry&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;v2.4.2&lt;br/&gt;02.02.2023&lt;br/&gt;&lt;/h4&gt;&lt;b&gt;1) fixed issue where inserted text was cut off after a closing bracket ")"&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;v2.4.1&lt;br/&gt;02.02.2023&lt;br/&gt;&lt;/h4&gt;&lt;b&gt;1) corrected the perform task action in the initial task to the correct task (CBM Set Up Quick Setting Tile)&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;v2.4&lt;br/&gt;02.02.2023&lt;br/&gt;&lt;/h4&gt;&lt;b&gt;1) added a task to setup the Quick Setting Tile, also added this in to the initial task&lt;/b&gt;&lt;br/&gt;
+&lt;b&gt;2) long-tap the Quick Setting Tile will know instantly open the Join Bubble with the current clipboard content&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;v2.3&lt;/h4&gt;&lt;b&gt;1) added "Join Send Push --&gt; Clipboard Bubble" when clipboard changes&lt;/b&gt;&lt;br/&gt;
+Since Android 13 the Logcat Entry Event no longer works pleasant without Root or ADB Wifi, so also the automatic snyc to your devices via Join does not work. Also Join uses this clipboard monitoring which no longer works. So I included the Join Clipboard Bubble to open when the clipboard changes.&lt;br/&gt;
+This Clipbard Manager also uses the "Clipboard Changed" Event which uses Logcat. So Root or ADB Wifi is needed!&lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;v2.2&lt;/h4&gt;&lt;b&gt;1) new long-click option: "Send with Join Bubble"
+If Join is installed, the Join Bubble appears to send the chosen entry to your devices&lt;br/&gt;
+2) corrected some labels&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;v2.1&lt;/h4&gt;&lt;b&gt;1) corrected an error where it was not possible to single-delete an entry from Saved Manager&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;v2.0&lt;/h4&gt;&lt;b&gt;1) changed storing entries from arrays to SQLite database&lt;/b&gt;&lt;br/&gt;
+- auto delete duplicate entries&lt;br/&gt;
+- limit logged Clipboard entries, changeable with "CBM Change Limit" task.&lt;br/&gt;
+- Multi-Delete option&lt;br/&gt;
+- showing only the first 100 characters in list dialogs to keep track.&lt;br/&gt;
+&lt;b&gt;2) reworked Long-Click options:&lt;/b&gt;&lt;br/&gt;
+- "Paste, Add to Saved, Delete, Multi-Delete" for Clipboard Manager entries&lt;br/&gt;
+- "Paste, Delete, Multi-Delete" for saved entries&lt;br/&gt;&lt;br/&gt;&lt;h4&gt;v1.1&lt;/h4&gt;&lt;b&gt;1) implemented a workaround for texts with "enter"&lt;/b&gt;&lt;br/&gt;If the copied texts contains an "enter" it was stored in the temporary Clipboard Manager but it was not possible to paste or delete it. By saving this text only the first row was saved.&lt;br/&gt;Workaround: Save text with #br# instead of "enter", but the text will be pasted with "enter" again!
+&lt;b&gt;12) changed from AutoInput to Keyboard-Action"&lt;/b&gt;</d>
+			<g>Clipboard</g>
+			<p>true</p>
+			<t>CBM Initial</t>
+		</Share>
+		<ProfileVariable sr="pv0">
+			<clearout>true</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>true</pvci>
+			<pvd>Choose how many entries the Clipboard Manager should log. You can change this value later with the "CBM Change Limit" task.</pvd>
+			<pvdn>Number of Clipboard Manager Entries</pvdn>
+			<pvid>9</pvid>
+			<pvit>pj</pvit>
+			<pvn>%numberentries</pvn>
+			<pvt>n</pvt>
+			<pvv>50</pvv>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv1">
+			<clearout>true</clearout>
+			<exportval></exportval>
+			<immutable>true</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>9</pvid>
+			<pvit>pj</pvit>
+			<pvn>%flash_background</pvn>
+			<pvt>cl</pvt>
+			<pvv>#FF606060</pvv>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv2">
+			<clearout>true</clearout>
+			<exportval></exportval>
+			<immutable>true</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>9</pvid>
+			<pvit>pj</pvit>
+			<pvn>%flash_icon</pvn>
+			<pvt>i</pvt>
+			<pvv>android.resource://net.dinglisch.android.taskerm/drawable/mw_action_assignment</pvv>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv3">
+			<clearout>true</clearout>
+			<exportval></exportval>
+			<immutable>true</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>9</pvid>
+			<pvit>pj</pvit>
+			<pvn>%dbpath</pvn>
+			<pvt>f</pvt>
+			<pvv>/storage/emulated/0/Tasker/database/ClipboardManager.db</pvv>
+			<strout>true</strout>
+		</ProfileVariable>
+	</Project>
+	<Task sr="task235">
+		<cdate>1660920364036</cdate>
+		<edate>1685519685813</edate>
+		<id>235</id>
+		<nme>CBM Initial</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>342</code>
+			<Int sr="arg0" val="5"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Str sr="arg2" ve="3">%fileexists</Str>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>37</code>
+			<label>Create file and tables if not exists</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%fileexists</lhs>
+					<op>2</op>
+					<rhs>false</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>410</code>
+			<Str sr="arg0" ve="3">%dbpath</Str>
+			<Str sr="arg1" ve="3">1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>667</code>
+			<label>Create table "clipboardmanager" if not exists</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">CREATE TABLE IF NOT EXISTS clipboardmanager (
+"id" INTEGER PRIMARY KEY AUTOINCREMENT, 
+"date" TEXT DEFAULT (date('now','localtime')),
+"time" TEXT DEFAULT (time('Now', 'localtime')),
+"clip" TEXT
+);</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%dummy</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>667</code>
+			<label>Create table "savedmanager" if not exists</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">CREATE TABLE IF NOT EXISTS savedmanager (
+"id" INTEGER PRIMARY KEY AUTOINCREMENT, 
+"date" TEXT DEFAULT (date('now','localtime')),
+"time" TEXT DEFAULT (time('Now', 'localtime')),
+"clip" TEXT
+);</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%dummy</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%limit</Str>
+			<Str sr="arg1" ve="3">%numberentries+1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>667</code>
+			<label>Create trigger in "clipboardmanager" for max. xxx entries</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">CREATE TRIGGER IF NOT EXISTS limit_cbm_entries
+AFTER INSERT ON clipboardmanager
+BEGIN 
+DELETE FROM clipboardmanager
+WHERE id IN 
+(SELECT id FROM clipboardmanager LIMIT 1)
+AND (SELECT COUNT(*) FROM clipboardmanager)=%limit;
+END;</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%dummy</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">CBM Set up Quick Setting Tile</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_communication_phonelink_setup</nme>
+		</Img>
+	</Task>
+	<Task sr="task267">
+		<cdate>1668676450601</cdate>
+		<edate>1682778248137</edate>
+		<id>267</id>
+		<nme>Image From CLIP</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>402</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%cl_extras
+Extras
+Optional extra info in JSON format that the clipboard may contains&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%cl_html_text
+HTML Text
+Current clipboard text if set as HTML text&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%cl_image_uri
+Image URI
+If the URI corresponds to an image, this will have a value&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%cl_mimetypes()
+Mime Type
+The types of data that the clipboard contains&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%cl_text
+Text
+Current clipboard text&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%cl_uri
+URI
+Current clipboard URI (could be image or something else)&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%cl_text
+
+%cl_image_uri</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">60000</Str>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>105</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%cl_image_uri</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">ok</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3">%cl_image_uri</Str>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>377</code>
+			<on>false</on>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3">content://com.sec.android.gallery3d.fileprovider/files/captured/copy/Clipped_image_20230421_180454.png</Str>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>404</code>
+			<Str sr="arg0" ve="3">%cl_image_uri</Str>
+			<Str sr="arg1" ve="3">Pictures/TaskerClipped</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task302">
+		<cdate>1660293461346</cdate>
+		<edate>1685519678412</edate>
+		<id>302</id>
+		<nme>CBM Set Clipboard Entry</nme>
+		<pri>6</pri>
+		<Action sr="act0" ve="7">
+			<code>37</code>
+			<label>If the clipboard content is an image, save the uri as text</label>
+			<on>false</on>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%cl_image_uri</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>105</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%cl_image_uri</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>38</code>
+			<on>false</on>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>1138588429</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<com.twofortyfouram.locale.intent.extra.BLURB>Clipboard Bubble: %CLIP</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.JSON_ENCODED_KEYS>parameters</net.dinglisch.android.tasker.JSON_ENCODED_KEYS>
+					<net.dinglisch.android.tasker.JSON_ENCODED_KEYS-type>java.lang.String</net.dinglisch.android.tasker.JSON_ENCODED_KEYS-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%joinmessage
+Result Message
+If there's no error, a possible status message&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>parameters plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<parameters>{"advancedSettings":{"deviceName":"","sendCustomMessage":false},"app":{},"clipboard":"","clipboardBubble":"%CLIP","desktopSettings":{"commandLine":false},"find":false,"location":false,"notificationSettings":{"notificationDismissOnTouch":false},"say":{},"screenshot":false,"smsSettings":{},"text":"","title":"","generatedValues":{}}</parameters>
+					<parameters-type>java.lang.String</parameters-type>
+					<plugininstanceid>0e2025e0-1c9e-41f2-9d56-1aa676388f54</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.join.tasker.intent.IntentSendPush</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.join</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.join.tasker.activity.ActivityConfigSendPush</Str>
+			<Int sr="arg3" val="60"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%temp_clip</Str>
+			<Str sr="arg1" ve="3">%CLIP</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>598</code>
+			<label>replace ' (single quote) with '' (double quote). Single quote will cause an error at SQL Query</label>
+			<Str sr="arg0" ve="3">%temp_clip</Str>
+			<Str sr="arg1" ve="3">'</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3">''</Str>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>667</code>
+			<label>Insert new clip into table "clipboardmanager"</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">INSERT INTO clipboardmanager (clip)
+VALUES('%temp_clip');</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%dummy</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>667</code>
+			<label>Delete duplicate in clipboardmanager</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">DELETE FROM clipboardmanager
+WHERE EXISTS (
+SELECT 1 FROM clipboardmanager t1
+WHERE clipboardmanager.clip = t1.clip
+AND clipboardmanager.id &lt; t1.id
+);</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%dummy</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>130</code>
+			<label>If the new clipboard content is a YouTube link, start this task to ask if to open in YouTube app.</label>
+			<Str sr="arg0" ve="3">CBM Open In Youtube App</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%CLIP</lhs>
+					<op>4</op>
+					<rhs>^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+	</Task>
+	<Task sr="task303">
+		<cdate>1660332817734</cdate>
+		<edate>1685519699209</edate>
+		<id>303</id>
+		<nme>CBM Saved Entries</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>513</code>
+			<se>false</se>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%errmsg</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<label>If the dialog is cancelled by botton, clicking BACK or clicking beside the dialog the Task will be cancelled.</label>
+			<ConditionList sr="if">
+				<bool0>Or</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_button</lhs>
+					<op>2</op>
+					<rhs>Cancel</rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Cancelled</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Clipboard Manager</Str>
+			<Str sr="arg4" ve="3">%flash_icon</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">%flash_background</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">CBM Clipboard Manager</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_button</lhs>
+					<op>2</op>
+					<rhs>Back To Unsaved</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>130</code>
+			<label>If clicking the "Clear Saved" Button all saved entries will be deleted, after a yes/no dialog.</label>
+			<Str sr="arg0" ve="3">CBM Clear all</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">Saved</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_button</lhs>
+					<op>2</op>
+					<rhs>Clear Saved</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>37</code>
+			<label>If normal click on an entry it will fill the focused input dialog.</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_long</lhs>
+					<op>2</op>
+					<rhs>false</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>328</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%kb_text_selected
+Selected Text
+Text selected on the current input, if any&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%kb_text
+Text
+Text present on the current input, if any&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%kb_text_after_cursor
+Text After Cursor
+Text after the cursor on the current input, if any&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%kb_text_before_cursor
+Text Before Cursor
+Text before the cursor on the current input, if any&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">write(%savedfull(%ld_selected_index))</Str>
+			<Int sr="arg2" val="500"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act19" ve="7">
+			<code>130</code>
+			<label>If long click on an entry, show dialog to choose save or delete.</label>
+			<Str sr="arg0" ve="3">CBM Save or Delete</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg2" ve="3">Saved</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_long</lhs>
+					<op>2</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>667</code>
+			<label>Read full data from table "savedmanager" in descent order</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">SELECT clip FROM savedmanager
+ORDER BY id DESC;</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%savedfull</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>667</code>
+			<label>Read short data from database table "savedmanager" in descent order to show the newest entry on top and the oldes entry on bottom of the list.
+Only the first 100 characters of the entry will be shown, to keep track.</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">SELECT SUBSTR (clip,1,100)
+FROM savedmanager
+ORDER BY id DESC;</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%savedshort</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>37</code>
+			<label>If there is no entry in the Saved Entries.</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%savedfull(#)</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Entry deleted. 
+No more saved Entries.
+Back to Clipboard Manager.</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Clipboard Manager</Str>
+			<Str sr="arg4" ve="3">%flash_icon</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">%flash_background</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">5000</Str>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%input</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">CBM Clipboard Manager</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>43</code>
+			<label>If there is minimum one entry, show the list dialog.</label>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>378</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%ld_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%ld_long
+Long
+true if item was long clicked, false otherwise&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%ld_selected
+Selected
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%ld_selected_index
+Selected Index
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3">Click to paste an entry,
+Long-Click on entry for more options (delete)</Str>
+			<Str sr="arg2" ve="3">Saved Clipboard Content</Str>
+			<Str sr="arg3" ve="3">%savedshort</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">Cancel</Str>
+			<Str sr="arg7" ve="3">Clear Saved</Str>
+			<Str sr="arg8" ve="3">Back To Unsaved</Str>
+			<Int sr="arg9" val="30"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>38</code>
+		</Action>
+	</Task>
+	<Task sr="task304">
+		<cdate>1660319858157</cdate>
+		<edate>1685519738130</edate>
+		<id>304</id>
+		<nme>CBM Clipboard Manager</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>513</code>
+			<se>false</se>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%errmsg</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>390</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%input
+Input
+The text that was retrieved from the dialog&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">YesOrNo</Str>
+			<Str sr="arg2" ve="3">No Entries in Clipboard Manager</Str>
+			<Str sr="arg3" ve="3">Show saved Entries?</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="30"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%input</lhs>
+					<op>2</op>
+					<rhs>yes</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">CBM Saved Entries</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">OK Sir.</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Clipboard Manager</Str>
+			<Str sr="arg4" ve="3">%flash_icon</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">%flash_background</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>43</code>
+			<label>If there is minimum one entry, show the list dialog with the Clipboard entries.
+If there are saved entries, show "Saved Entries" button, if not, dont show this button.</label>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>378</code>
+			<label>If no saved content available, show without "saved" button</label>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%ld_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%ld_long
+Long
+true if item was long clicked, false otherwise&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%ld_selected
+Selected
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%ld_selected_index
+Selected Index
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3">Click to paste an entry,
+Long-Click on entry for more options (save/delete)</Str>
+			<Str sr="arg2" ve="3">Clipboard Manager Content</Str>
+			<Str sr="arg3" ve="3">%cbmshort</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">Cancel</Str>
+			<Str sr="arg7" ve="3">Clear CBM</Str>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="30"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%savedfull(#)</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act19" ve="7">
+			<code>378</code>
+			<label>If saved content available, show with "saved" button</label>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%ld_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%ld_long
+Long
+true if item was long clicked, false otherwise&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%ld_selected
+Selected
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%ld_selected_index
+Selected Index
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3">Click to paste an entry,
+Long-Click on entry for more options (save/delete)</Str>
+			<Str sr="arg2" ve="3">Clipboard Manager Content</Str>
+			<Str sr="arg3" ve="3">%cbmshort</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">Cancel</Str>
+			<Str sr="arg7" ve="3">Clear CBM</Str>
+			<Str sr="arg8" ve="3">Saved Entries</Str>
+			<Int sr="arg9" val="30"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%savedfull(#)</lhs>
+					<op>3</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>667</code>
+			<label>Read full data from table "clipboardmanager" in descent order</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">SELECT clip FROM clipboardmanager
+ORDER BY id DESC;</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%cbmfull</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act20" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act21" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<label>If the dialog is cancelled by botton, clicking BACK or clicking beside the dialog the Task will be cancelled.</label>
+			<ConditionList sr="if">
+				<bool0>Or</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_button</lhs>
+					<op>2</op>
+					<rhs>Cancel</rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act22" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Cancelled</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Clipboard Manager</Str>
+			<Str sr="arg4" ve="3">%flash_icon</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">%flash_background</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act23" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act24" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act25" ve="7">
+			<code>130</code>
+			<label>If clicking the "Clear CBM" Button all entries will be deleted, after a yes/no dialog.</label>
+			<Str sr="arg0" ve="3">CBM Clear all</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg2" ve="3">CBM</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_button</lhs>
+					<op>2</op>
+					<rhs>Clear CBM</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act26" ve="7">
+			<code>130</code>
+			<label>If clicking the "Saved Entries" Button a new dialog will be shown with the saved entries.</label>
+			<Str sr="arg0" ve="3">CBM Saved Entries</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_button</lhs>
+					<op>2</op>
+					<rhs>Saved Entries</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act27" ve="7">
+			<code>37</code>
+			<label>lf click on an entry it will fill the focused input dialog.</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_long</lhs>
+					<op>2</op>
+					<rhs>false</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act28" ve="7">
+			<code>598</code>
+			<Str sr="arg0" ve="3">%cbmfull(%ld_selected_index)</Str>
+			<Str sr="arg1" ve="3">\)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3">\\)</Str>
+		</Action>
+		<Action sr="act29" ve="7">
+			<code>328</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%kb_text_selected
+Selected Text
+Text selected on the current input, if any&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%kb_text
+Text
+Text present on the current input, if any&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%kb_text_after_cursor
+Text After Cursor
+Text after the cursor on the current input, if any&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%kb_text_before_cursor
+Text Before Cursor
+Text before the cursor on the current input, if any&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">write(%cbmfull(%ld_selected_index))</Str>
+			<Int sr="arg2" val="500"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>667</code>
+			<label>Read short data from database table "clipboardmanager" in descent order to show the newest entry on top and the oldes entry on bottom of the list.
+Only the first 100 characters of the entry will be shown, to keep track.</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">SELECT SUBSTR (clip,1,100)
+FROM clipboardmanager
+ORDER BY id DESC;</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%cbmshort</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act30" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act31" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act32" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_long</lhs>
+					<op>2</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act33" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act34" ve="7">
+			<code>130</code>
+			<label>If long click on an entry, show dialog to choose save or delete.</label>
+			<Str sr="arg0" ve="3">CBM Save or Delete</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg2" ve="3">CBM</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_long</lhs>
+					<op>2</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>667</code>
+			<label>Read full data from table "savedmanager" for checking if it is empty</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">SELECT * FROM savedmanager;</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%savedfull</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>37</code>
+			<label>Check if tables are empty</label>
+			<ConditionList sr="if">
+				<bool0>And</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%cbmfull(#)</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%savedfull(#)</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">Clipboard Manager</Str>
+			<Str sr="arg2" ve="3">No Entries in the Clipboard Manager.
+No Saved Entries.</Str>
+			<Str sr="arg3" ve="3">ok</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>37</code>
+			<label>If there is no entry in the Clipboard Manager.</label>
+			<ConditionList sr="if">
+				<bool0>And</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%cbmfull(#)</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%savedfull(#)</lhs>
+					<op>3</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_action_assignment</nme>
+		</Img>
+	</Task>
+	<Task sr="task305">
+		<cdate>1660506336569</cdate>
+		<edate>1685519952978</edate>
+		<id>305</id>
+		<nme>CBM Info</nme>
+		<Action sr="act0" ve="7">
+			<code>300</code>
+			<label>&lt;h3&gt;&lt;font color=red&gt;Clipboard Manager&lt;/font&gt;&lt;/h3&gt;&lt;br&gt;&lt;h5&gt;&lt;font color=green&gt;v2.6.0&lt;br&gt;by WehZet&lt;br&gt;&lt;br&gt;This Clipboard Manager uses the "Clipboard Changed" Event which uses Logcat. Since Android 13 Logcat does not work without Root or ADB Wifi pleasant anymore. So Root or ADB Wifi is needed!&lt;br&gt;&lt;br&gt;More info here:&lt;br&gt;https://tasker.joaoapps.com/knownissues.html&lt;br&gt;&lt;br&gt;Hope you like it!&lt;br&gt;Any problems with this Clipboard Manager? Contact me on Reddit: u/WehZet &lt;/h5&gt;&lt;/font&gt;</label>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;ideas&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;- pictures in Clipboard?
+Copy to folder... &lt;br/&gt;
+&lt;/b&gt;</label>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v2.4&lt;br/&gt;02.02.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;1) added a task to setup the Quick Setting Tile, also added this in to the initial task&lt;/b&gt;&lt;br/&gt;
+&lt;br/&gt;
+&lt;b&gt;2) long-tap the Quick Setting Tile will know instantly open the Join Bubble with the current clipboard content&lt;/b&gt;</label>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v2.3&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;1) added "Join Send Push --&gt; Clipboard Bubble" when clipboard changes&lt;/b&gt;&lt;br/&gt;
+Since Android 13 the Logcat Entry Event no longer works pleasant without Root or ADB Wifi, so also the automatic snyc to your devices via Join does not work. Also Join uses this clipboard monitoring which no longer works. So I included the Join Clipboard Bubble to open when the clipboard changes.&lt;br/&gt;
+This Clipbard Manager also uses the "Clipboard Changed" Event which uses Logcat. So Root or ADB Wifi is needed!</label>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v2.2&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;1) new long-click option: "Send with Join Bubble"
+If Join is installed, the Join Bubble appears to send the chosen entry to your devices&lt;br/&gt;
+2) corrected some labels&lt;/b&gt;&lt;br/&gt;</label>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v2.1&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;1) corrected an error where it was not possible to single-delete an entry from Saved Manager&lt;/b&gt;&lt;br/&gt;</label>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v2.0&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;1) changed storing entries from arrays to SQLite database&lt;/b&gt;&lt;br/&gt;
+- auto delete duplicate entries&lt;br/&gt;
+- limit logged Clipboard entries, changeable with "CBM Change Limit" task.&lt;br/&gt;
+- Multi-Delete option&lt;br/&gt;
+- showing only the first 100 characters in list dialogs to keep track.&lt;br/&gt;
+&lt;b&gt;2) reworked Long-Click options:&lt;/b&gt;&lt;br/&gt;
+- "Paste, Add to Saved, Delete, Multi-Delete" for Clipboard Manager entries&lt;br/&gt;
+- "Paste, Delete, Multi-Delete" for saved entries</label>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v1.1&lt;/font&gt;&lt;/h4&gt;
+&lt;h5&gt;1) implemented a workaround for texts with "enter"&lt;/h5&gt;
+If the copied texts contains an "enter" it was stored in the temporary Clipboard Manager but it was not possible to paste or delete it. By saving this text only the first row was saved.
+Workaround: Save text with #br# instead of "enter", but the text will be pasted with "enter" again!
+&lt;h5&gt;2) changed from AutoInput to Keyboard-Action&lt;/h5&gt;</label>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v2.6.0&lt;br/&gt;31.05.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;1) added a prompt which ask if you like to open in YouTube if the new clipboard content is a YouTube link. (original code from "konieckropka") &lt;/b&gt;</label>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v2.5.2&lt;br/&gt;07.03.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;1) fixed problem where an error occurs at writing the new Clipboard content into SQL database when the Clip contains a ' (single quote) &lt;/b&gt;</label>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v2.5.1&lt;br/&gt;18.02.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;1) optimized the parsing/formatting of the date for the "Save or Delete Entry" dialog&lt;/b&gt;</label>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v2.5.0&lt;br/&gt;16.02.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;1) now showing within the "Save or Delete Entry" dialog the date and time when the chosen entry was saved and the short preview of the entry&lt;/b&gt;</label>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v2.4.4&lt;br/&gt;03.02.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;1) fixed issue where the Clipboard Manager was cancelled in some situations&lt;/b&gt;</label>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v2.4.3&lt;br/&gt;03.02.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;1) fixed issue where not coming back to Clipboard Manager after deleting an entry&lt;/b&gt;</label>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v2.4.2&lt;br/&gt;02.02.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;1) fixed issue where inserted text was cut off after a closing bracket ")"&lt;/b&gt;</label>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v2.4.1&lt;br/&gt;02.02.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;1) corrected the perform task action in the initial task to the correct task (CBM Set Up Quick Setting Tile)&lt;/b&gt;</label>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_action_info_outline</nme>
+		</Img>
+	</Task>
+	<Task sr="task306">
+		<cdate>1660401346284</cdate>
+		<edate>1675431610387</edate>
+		<id>306</id>
+		<nme>CBM Clear all</nme>
+		<Action sr="act0" ve="7">
+			<code>389</code>
+			<label>Set several variables for "coming from CBD" and coming from Saved"</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""/&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%titleinput
+%textinput
+%whichtable
+%textflashcleared
+%textflashnothing
+%task</Str>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">Clear Clipboard Manager
+Do you really want to clear all Clipboard entries?
+clipboardmanager
+Clipboard Manager entries cleared.
+Nothing cleared. Back to Clipboard Manager.
+Clipboard Manager</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>CBM</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>389</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""/&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%titleinput
+%textinput
+%whichtable
+%textflashcleared
+%textflashnothing
+%task</Str>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">Clear Saved Entries
+Do you really want to clear all Saved entries?
+savedmanager
+All saved entries cleared. Back to Clipboard Manager.
+Nothing cleared. Back to saved entries.
+CBM Saved Entries</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>Saved</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>390</code>
+			<label>Question if you really want to delete</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%input
+Input
+The text that was retrieved from the dialog&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">YesOrNo</Str>
+			<Str sr="arg2" ve="3">%titleinput</Str>
+			<Str sr="arg3" ve="3">%textinput</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%input</lhs>
+					<op>2</op>
+					<rhs>yes</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>667</code>
+			<label>Delete all data from table clipboardmanager/savedmanager</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">DELETE FROM %whichtable;</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%dummy</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%textflashcleared</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Clipboard Manager</Str>
+			<Str sr="arg4" ve="3">%flash_icon</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">%flash_background</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>43</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%input</lhs>
+					<op>2</op>
+					<rhs>no</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%textflashnothing</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Clipboard Manager</Str>
+			<Str sr="arg4" ve="3">%flash_icon</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">%flash_background</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">%task</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task307">
+		<cdate>1660406342221</cdate>
+		<edate>1685519800026</edate>
+		<id>307</id>
+		<nme>CBM Save or Delete</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>37</code>
+			<label>&lt;h3&gt;&lt;font color=green&gt;coming from CBM&lt;/font&gt;&lt;/h3&gt;</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>CBM</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>389</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""/&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%task
+%whichtable
+%button
+%chosen_index
+%choices</Str>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">CBM Clipboard Manager
+clipboardmanager
+Back To CBM
+%ld_selected_index
+Paste,Add to Saved,Send with Join Bubble,Delete,Multi-Delete</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="1"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>667</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">SELECT time FROM %whichtable
+ORDER BY id DESC;</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%time</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>389</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""/&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%date_selected
+%time_selected</Str>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">%date(%ld_selected_index)
+%time(%ld_selected_index)</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="1"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>394</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%date_selected
+00. Date selected
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%dt_millis
+1. MilliSeconds
+Milliseconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%dt_seconds
+2. Seconds
+Seconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%dt_day_of_month
+3. Day Of Month
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%dt_month_of_year
+4. Month Of Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%dt_year
+5. Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Str sr="arg2" ve="3">%date_selected</Str>
+			<Str sr="arg3" ve="3">yyyy-MM-dd</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3">dd.MM.yyyy</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%date_selected</Str>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>378</code>
+			<label>Show the "Save or Delete Entry" dialog</label>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%ld_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%ld_long
+Long
+true if item was long clicked, false otherwise&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%ld_selected
+Selected
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%ld_selected_index
+Selected Index
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg13" ve="3">%date_selected - %time_selected
+
+Choose what you want to do with:
+%chosenshort </Str>
+			<Str sr="arg2" ve="3">Save or Delete Entry</Str>
+			<Str sr="arg3" ve="3">%choices</Str>
+			<Str sr="arg4" ve="3">%chosen_index</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">Cancel</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%button</Str>
+			<Int sr="arg9" val="30"/>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<bool0>Or</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%ld_button</lhs>
+					<op>2</op>
+					<rhs>Cancel</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Cancelled</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Clipboard Manager</Str>
+			<Str sr="arg4" ve="3">%flash_icon</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">%flash_background</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>37</code>
+			<label>&lt;h4&gt;&lt;font color=yellow&gt;paste&lt;/font&gt;&lt;/h4&gt;</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_selected</lhs>
+					<op>2</op>
+					<rhs>Paste</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act19" ve="7">
+			<code>328</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%kb_text_selected
+Selected Text
+Text selected on the current input, if any&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%kb_text
+Text
+Text present on the current input, if any&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%kb_text_after_cursor
+Text After Cursor
+Text after the cursor on the current input, if any&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%kb_text_before_cursor
+Text Before Cursor
+Text before the cursor on the current input, if any&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">write(%chosenfull)</Str>
+			<Int sr="arg2" val="500"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%chosenfull</Str>
+			<Str sr="arg1" ve="3">%cbmfull(%ld_selected_index)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act20" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act21" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act22" ve="7">
+			<code>37</code>
+			<label>&lt;h4&gt;&lt;font color=yellow&gt;save&lt;/font&gt;&lt;/h4&gt;</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_selected</lhs>
+					<op>2</op>
+					<rhs>Add to Saved</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act23" ve="7">
+			<code>667</code>
+			<label>Save clip to table "savedmanager"</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">INSERT INTO savedmanager (clip)
+VALUES('%chosenfull');</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%dummy</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act24" ve="7">
+			<code>667</code>
+			<label>Delete duplicate in savedmanager</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">DELETE FROM savedmanager
+WHERE EXISTS (
+SELECT 1 FROM savedmanager t1
+WHERE savedmanager.clip = t1.clip
+AND savedmanager.id &lt; t1.id
+);</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%dummy</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act25" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Entry saved</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Clipboard Manager</Str>
+			<Str sr="arg4" ve="3">%flash_icon</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">%flash_background</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act26" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">CBM Saved Entries</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act27" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act28" ve="7">
+			<code>37</code>
+			<label>&lt;h4&gt;&lt;font color=yellow&gt;delete&lt;/font&gt;&lt;/h4&gt;</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_selected</lhs>
+					<op>2</op>
+					<rhs>Delete</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act29" ve="7">
+			<code>667</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">DELETE FROM %whichtable
+WHERE clip = '%chosenfull';</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%dummy</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%chosenshort</Str>
+			<Str sr="arg1" ve="3">%ld_selected</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act30" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Entry deleted</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Clipboard Manager</Str>
+			<Str sr="arg4" ve="3">%flash_icon</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">%flash_background</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act31" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">%task</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act32" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act33" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<label>&lt;h4&gt;&lt;font color=yellow&gt;multi-delete&lt;/font&gt;&lt;/h4&gt;</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_selected</lhs>
+					<op>2</op>
+					<rhs>Multi-Delete</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act34" ve="7">
+			<code>378</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%ld_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%ld_selected()
+Selected
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%ld_selected_index()
+Selected Index
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Str sr="arg2" ve="3">Multi-Delete</Str>
+			<Str sr="arg3" ve="3">%cbmshort</Str>
+			<Str sr="arg4" ve="3">%chosenshort</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">OK</Str>
+			<Str sr="arg7" ve="3">Delete All</Str>
+			<Str sr="arg8" ve="3">%button</Str>
+			<Int sr="arg9" val="30"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>CBM</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act35" ve="7">
+			<code>378</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%ld_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%ld_selected()
+Selected
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%ld_selected_index()
+Selected Index
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Str sr="arg2" ve="3">Multi-Delete</Str>
+			<Str sr="arg3" ve="3">%savedshort</Str>
+			<Str sr="arg4" ve="3">%chosenshort</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">OK</Str>
+			<Str sr="arg7" ve="3">Delete All</Str>
+			<Str sr="arg8" ve="3">%button</Str>
+			<Int sr="arg9" val="30"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>Saved</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act36" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_button</lhs>
+					<op>2</op>
+					<rhs>OK</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act37" ve="7">
+			<code>667</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">SELECT id FROM %whichtable
+ORDER BY id DESC;</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%multi_id</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act38" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%multi_selected_index</Str>
+			<Str sr="arg1" ve="3">%ld_selected_index()</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act39" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%multi_selected_id</Str>
+			<Str sr="arg1" ve="3">%multi_id(%multi_selected_index)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>43</code>
+			<label>&lt;h3&gt;&lt;font color=green&gt;coming from Saved&lt;/font&gt;&lt;/h3&gt;</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>Saved</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act40" ve="7">
+			<code>667</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">DELETE FROM %whichtable
+WHERE id IN (%multi_selected_id);</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%dummy</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act41" ve="7">
+			<code>43</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_button</lhs>
+					<op>2</op>
+					<rhs>Delete All</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act42" ve="7">
+			<code>130</code>
+			<label>If clicking the "Delete All" Button all entries will be deleted, after a yes/no dialog.</label>
+			<Str sr="arg0" ve="3">CBM Clear all</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg2" ve="3">CBM</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>CBM</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act43" ve="7">
+			<code>130</code>
+			<label>If clicking the "Delete All" Button all entries will be deleted, after a yes/no dialog.</label>
+			<Str sr="arg0" ve="3">CBM Clear all</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg2" ve="3">Saved</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>Saved</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act44" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act45" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<label>If the dialog is cancelled by botton, clicking BACK or clicking beside the dialog the Task will be cancelled.</label>
+			<ConditionList sr="if">
+				<bool0>Or</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_button</lhs>
+					<op>2</op>
+					<rhs>Cancel</rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act46" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Cancelled
+%button</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Clipboard Manager</Str>
+			<Str sr="arg4" ve="3">%flash_icon</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">%flash_background</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act47" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act48" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">%task</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act49" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>389</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""/&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%task
+%whichtable
+%button
+%chosen_index
+%choices</Str>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">CBM Saved Entries
+savedmanager
+Back To Saved
+%ld_selected_index
+Paste,Send with Join Bubble,Delete,Multi-Delete</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="1"/>
+		</Action>
+		<Action sr="act50" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<label>&lt;h4&gt;&lt;font color=yellow&gt;Send with Join Bubble&lt;/font&gt;&lt;/h4&gt;</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_selected</lhs>
+					<op>2</op>
+					<rhs>Send with Join Bubble</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act51" ve="7">
+			<code>1138588429</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<com.twofortyfouram.locale.intent.extra.BLURB>Clipboard Bubble: %chosenfull</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.JSON_ENCODED_KEYS>parameters</net.dinglisch.android.tasker.JSON_ENCODED_KEYS>
+					<net.dinglisch.android.tasker.JSON_ENCODED_KEYS-type>java.lang.String</net.dinglisch.android.tasker.JSON_ENCODED_KEYS-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%joinmessage
+Result Message
+If there's no error, a possible status message&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>parameters plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<parameters>{"advancedSettings":{"deviceName":"","sendCustomMessage":false},"app":{},"clipboard":"","clipboardBubble":"%chosenfull","desktopSettings":{"commandLine":false},"find":false,"location":false,"notificationSettings":{"notificationDismissOnTouch":false},"say":{},"screenshot":false,"smsSettings":{},"text":"","title":"","generatedValues":{}}</parameters>
+					<parameters-type>java.lang.String</parameters-type>
+					<plugininstanceid>0e2025e0-1c9e-41f2-9d56-1aa676388f54</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.join.tasker.intent.IntentSendPush</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.join</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.join.tasker.activity.ActivityConfigSendPush</Str>
+			<Int sr="arg3" val="60"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act52" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act53" ve="7">
+			<code>37</code>
+			<label>&lt;h4&gt;&lt;font color=yellow&gt;back to previous&lt;/font&gt;&lt;/h4&gt;</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_button</lhs>
+					<op>2</op>
+					<rhs>%button</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act54" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">%task</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act55" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%chosenfull</Str>
+			<Str sr="arg1" ve="3">%savedfull(%ld_selected_index)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%chosenshort</Str>
+			<Str sr="arg1" ve="3">%ld_selected</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>667</code>
+			<label>Getting date and time from entry, starting here</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">SELECT date FROM %whichtable
+ORDER BY id DESC;</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%date</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task327">
+		<cdate>1675330454541</cdate>
+		<edate>1685519137810</edate>
+		<id>327</id>
+		<nme>CBM Join Bubble CLIP</nme>
+		<pri>1000</pri>
+		<Action sr="act0" ve="7">
+			<code>1138588429</code>
+			<label>Opens the Join Bubble with the current Clipboard content</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<com.twofortyfouram.locale.intent.extra.BLURB>Clipboard Bubble: %CLIP</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.JSON_ENCODED_KEYS>parameters</net.dinglisch.android.tasker.JSON_ENCODED_KEYS>
+					<net.dinglisch.android.tasker.JSON_ENCODED_KEYS-type>java.lang.String</net.dinglisch.android.tasker.JSON_ENCODED_KEYS-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%joinmessage
+Result Message
+If there's no error, a possible status message&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>parameters plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<parameters>{"advancedSettings":{"sendCustomMessage":false},"app":{},"clipboardBubble":"%CLIP","desktopSettings":{"commandLine":false},"find":false,"location":false,"notificationSettings":{"notificationDismissOnTouch":false},"say":{},"screenshot":false,"smsSettings":{},"generatedValues":{}}</parameters>
+					<parameters-type>java.lang.String</parameters-type>
+					<plugininstanceid>4b0334a2-8b68-44a7-b902-5681a0a920d1</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.join.tasker.intent.IntentSendPush</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.join</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.join.tasker.activity.ActivityConfigSendPush</Str>
+			<Int sr="arg3" val="60"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task328">
+		<cdate>1675330543853</cdate>
+		<edate>1682283039258</edate>
+		<id>328</id>
+		<nme>CBM Set up Quick Setting Tile</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>162</code>
+			<Int sr="arg0" val="1"/>
+			<Str sr="arg1" ve="3">CBM Clipboard Manager</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">CBM Join Bubble CLIP</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">Clipboard Manager</Str>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task334">
+		<cdate>1682336742835</cdate>
+		<edate>1682778246630</edate>
+		<id>334</id>
+		<nme>Show Clipped Images</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>412</code>
+			<Str sr="arg0" ve="3">Pictures/TaskerClipped</Str>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="7"/>
+			<Str sr="arg5" ve="3">%cliplist</Str>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>412</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">Pictures/TaskerClipped</Str>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="7"/>
+			<Str sr="arg5" ve="3">%clipname</Str>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>354</code>
+			<Str sr="arg0" ve="3">%clipname</Str>
+			<Str sr="arg1" ve="3">%cliplist()</Str>
+			<Str sr="arg2" ve="3">,</Str>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%index</Str>
+			<Str sr="arg1" ve="3">1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>39</code>
+			<Str sr="arg0" ve="3">%temp</Str>
+			<Str sr="arg1" ve="3">%clipname()</Str>
+			<Int sr="arg2" val="1"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>598</code>
+			<Str sr="arg0" ve="3">%clipname(%index)</Str>
+			<Str sr="arg1" ve="3">
+*/storage/emulated/0/Pictures/TaskerClipped/*</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>888</code>
+			<Str sr="arg0" ve="3">%index</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>40</code>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>1165325195</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<AlwaysRefreshPreset>false</AlwaysRefreshPreset>
+					<AlwaysRefreshPreset-type>java.lang.Boolean</AlwaysRefreshPreset-type>
+					<ScreenPreset>cardlist</ScreenPreset>
+					<ScreenPreset-type>java.lang.String</ScreenPreset-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Screen Preset: Card List
+Display Mode: Normal
+Source: /storage/emulated/0/AutoTools/cardlist/page.html
+Toast Duration: 5000
+Height: 400
+Gravity: Center
+Animation: Slide In From Top
+Show Duration: 500
+Hide Duration: 250
+Title: Example
+Search Color: #ffffff
+Filter With Search: true
+Command Prefix: search
+Titles: true
+Subtitles: true
+Subtext Left: true
+Subtext Right: true
+Whole Words: true
+Drawer Width: 80%
+Card Titles: %clipname()
+Round Card Icons: true
+Card Images: %cliplist()
+Accent Color: #AB47BC
+Max Card Widths: 100%
+Max Image Heights: 350
+Title Text Size: 22
+Subtitle Text Size: 22
+Card Padding: 24
+Card Alignment: Center
+Item Separator: ,</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.JSON_ENCODED_KEYS>parameters</net.dinglisch.android.tasker.JSON_ENCODED_KEYS>
+					<net.dinglisch.android.tasker.JSON_ENCODED_KEYS-type>java.lang.String</net.dinglisch.android.tasker.JSON_ENCODED_KEYS-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>parameters ScreenPreset plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<parameters>{"inputJavascriptInject":{},"loadAllLinksInternally":false,"overlayToastDuration":"5000","webScreenOverlay":{"overlayHidDuration":"250","overlayReturnToOriginalPosition":false,"overlayShowDuration":"500"},"webscreebKeepScreenOn":false,"webscreenColors":{"webscreenNavigationBarColor":"","webscreenStatusBarColor":""},"webscreenCommands":{"continueOnError":false,"onlyLocalCommands":false,"waitForCommand":false,"webscreenCloseOnAutoAppsCommand":false},"webscreenDialog":{"dimBackground":false,"hideDialogShadow":false},"webscreenDialogMode":"0","webscreenHtmlInject":{"webscreenReturnHtmlInjection":false},"webscreenSource":"/storage/emulated/0/AutoTools/cardlist/page.html","webscreenWindow":{"dialogAnimation":"0","dialogGravity":"17","dialogHeight":"400","dialogUseFullHeight":false},"generatedValues":{"inputwebscreengeneratedcardAlign":"Center","inputwebscreengeneratedtitleTextSize":"22","inputwebscreengeneratedsearchShouldFilter":true,"inputwebscreengeneratedcardPadding":"24","inputwebscreengeneratedshouldSearchSubtextRight":true,"inputwebscreengenerateddrawerEnable":false,"inputwebscreengeneratedmaxWidth":"100%","inputwebscreengeneratedtitleFromTasker":"Example","inputwebscreengeneratedmaxHeight":"350","inputwebscreengeneratedtitleSearch":false,"inputwebscreengeneratedtitleSearchCommandPrefix":"search","inputwebscreengenerateddrawerWidth":"80%","inputwebscreengenerateditemSeparator":",","inputwebscreengeneratedshouldSearchTitle":true,"inputwebscreengeneratedcardTitle":"%clipname()","inputwebscreengeneratedshouldSearchWholeWords":true,"inputwebscreengeneratedcardIconRound":true,"inputwebscreengeneratedcardButtonsStandalone":false,"inputwebscreengeneratedshouldSearchSubtextLeft":true,"inputwebscreengeneratedsubtitleTextSize":"22","inputwebscreengeneratedtitleSearchColor":"#ffffff","inputwebscreengenerateddrawerShowUser":false,"inputwebscreengeneratedcardImage":"%cliplist()","inputwebscreengeneratedrepeatLast":false,"inputwebscreengeneratedshouldSearchSubtitle":true,"inputwebscreengeneratedaccentColor":"#AB47BC"}}</parameters>
+					<parameters-type>java.lang.String</parameters-type>
+					<plugininstanceid>c8b50808-1522-4ae0-b89d-d7b349cd7a52</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autotools.intent.IntentWebScreen</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autotools</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autotools.activity.ActivityConfigWebScreen</Str>
+			<Int sr="arg3" val="30"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%clipname()</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task379">
+		<cdate>1685518546668</cdate>
+		<edate>1685519561358</edate>
+		<id>379</id>
+		<nme>CBM Open In Youtube App</nme>
+		<Action sr="act0" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%youtube</Str>
+			<Str sr="arg1" ve="3">%CLIP</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>390</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%input
+Input
+The text that was retrieved from the dialog&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">YesOrNo</Str>
+			<Str sr="arg2" ve="3">Open in YouTube App? </Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="30"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%input</lhs>
+					<op>2</op>
+					<rhs>yes</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>104</code>
+			<Str sr="arg0" ve="3">%youtube</Str>
+			<App sr="arg1"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">YouTube App not opened.
+Copied link to clipboard. </Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>300</code>
+			<label>Original Author of this Code: konieckropkaIf
+|
+v.0.1
+|
+2021-10-15
+
+
+YouTube (or YouTube Vanced, VLC or any other app that can open YouTube videos) app is installed on the system, this profile opens video in YouTube app when clipboard is set to YouTube video URL. 
+
+If app is not installed it opens video in the browser.
+
+Usage example: when you browse the web with your mobile browser and get a YouTube video linked on a webpage it opens inside the browser. You might prefer to open it in YouTube (Vanced) app. You can now just copy URL from the browser address bar and video will open auomtaically in the app.
+
+This works with all YouTube URLs patterns:
+
+https://www.youtube.com/watch?v= 9ix7TUGVYIo&amp;feature=featured
+https://www.youtube.com/watch?v= 9ix7TUGVYIo
+http://www.youtube.com/watch?v= 9ix7TUGVYIo
+//www.youtube.com/watch?v= 9ix7TUGVYIo
+www.youtube.com/watch?v= 9ix7TUGVYIo
+https://youtube.com/watch?v= 9ix7TUGVYIo
+http://youtube.com/watch?v= 9ix7TUGVYIo
+//youtube.com/watch?v= 9ix7TUGVYIo
+youtube.com/watch?v= 9ix7TUGVYIo
+
+https://m.youtube.com/watch?v= 9ix7TUGVYIo
+http://m.youtube.com/watch?v= 9ix7TUGVYIo
+//m.youtube.com/watch?v= 9ix7TUGVYIo
+m.youtube.com/watch?v= 9ix7TUGVYIo
+
+https://www.youtube.com/v/ 9ix7TUGVYIo?fs=1&amp;hl=en_US
+http://www.youtube.com/v/ 9ix7TUGVYIo?fs=1&amp;hl=en_US
+//www.youtube.com/v/ 9ix7TUGVYIo?fs=1&amp;hl=en_US
+www.youtube.com/v/ 9ix7TUGVYIo?fs=1&amp;hl=en_US
+youtube.com/v/ 9ix7TUGVYIo?fs=1&amp;hl=en_US
+
+https://www.youtube.com/embed/ 9ix7TUGVYIo?autoplay=1
+https://www.youtube.com/embed/ 9ix7TUGVYIo
+http://www.youtube.com/embed/ 9ix7TUGVYIo
+//www.youtube.com/embed/ 9ix7TUGVYIo
+www.youtube.com/embed/ 9ix7TUGVYIo
+https://youtube.com/embed/ 9ix7TUGVYIo
+http://youtube.com/embed/ 9ix7TUGVYIo
+//youtube.com/embed/ 9ix7TUGVYIo
+youtube.com/embed/ 9ix7TUGVYIo
+
+https://youtu.be/ 9ix7TUGVYIo?t=120
+https://youtu.be/ 9ix7TUGVYIo
+http://youtu.be/ 9ix7TUGVYIo
+//youtu.be/ 9ix7TUGVYIo
+youtu.be/ 9ix7TUGVYIo</label>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_notification_ondemand_video</nme>
+			<tint>-1</tint>
+		</Img>
+	</Task>
+	<Task sr="task47">
+		<cdate>1661197796267</cdate>
+		<edate>1675431630122</edate>
+		<id>47</id>
+		<nme>CBM Change Limit</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%numberentries_old</Str>
+			<Str sr="arg1" ve="3">%numberentries</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>390</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%input
+Input
+The text that was retrieved from the dialog&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">YesOrNo</Str>
+			<Str sr="arg2" ve="3">New Entry Limit</Str>
+			<Str sr="arg3" ve="3">ATTENTION: Setting a new entry limit for the Clipboard Manager will delete all logged clips.
+The saved entries are not effected!
+
+Do you really want to change the entry limit?</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>667</code>
+			<label>Delete old trigger</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">DROP TRIGGER limit_cbm_entries;
+CREATE TRIGGER IF NOT EXISTS limit_cbm_entries
+AFTER INSERT ON clipboardmanager
+BEGIN 
+DELETE FROM clipboardmanager
+WHERE id IN 
+(SELECT id FROM clipboardmanager LIMIT 1)
+AND (SELECT COUNT(*) FROM clipboardmanager)=%limit;
+END;</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%dummy</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>667</code>
+			<label>Create new trigger in "clipboardmanager" for max. xxx entries</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">CREATE TRIGGER IF NOT EXISTS limit_cbm_entries
+AFTER INSERT ON clipboardmanager
+BEGIN 
+DELETE FROM clipboardmanager
+WHERE id IN 
+(SELECT id FROM clipboardmanager LIMIT 1)
+AND (SELECT COUNT(*) FROM clipboardmanager)=%limit;
+END;</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%dummy</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">New Entry Limit</Str>
+			<Str sr="arg2" ve="3">The entry limit was changed from %numberentries_old to %numberentries</Str>
+			<Str sr="arg3" ve="3">OK</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>377</code>
+			<label>Nothing changed dialog</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">New Entry Limit</Str>
+			<Str sr="arg2" ve="3">Nothing changed. The entry limit remains %numberentries</Str>
+			<Str sr="arg3" ve="3">OK</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+			<ConditionList sr="if">
+				<bool0>Or</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%input</lhs>
+					<op>2</op>
+					<rhs>no</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">Nothing changed dialog</Str>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%input</lhs>
+					<op>2</op>
+					<rhs>no</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>360</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%input
+Input
+The text that was inserted in the dialog&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">New Entry Limit</Str>
+			<Str sr="arg2" ve="3">Set the new value for the entry limit.
+The current value is: %numberentries_old</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="30"/>
+			<Str sr="arg5" ve="3">12290</Str>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%input</lhs>
+					<op>2</op>
+					<rhs>yes</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%input</lhs>
+					<op>2</op>
+					<rhs>%numberentries_old</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>377</code>
+			<label>Nothing changed because new = old</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">New Entry Limit</Str>
+			<Str sr="arg2" ve="3">Nothing changed because new limit (%input) is the same like the old limit (%numberentries_old).
+The entry limit remains %numberentries</Str>
+			<Str sr="arg3" ve="3">OK</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>43</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%numberentries</Str>
+			<Str sr="arg1" ve="3">%input</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%limit</Str>
+			<Str sr="arg1" ve="3">%numberentries+1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>667</code>
+			<label>Delete all data from table clipboardmanager</label>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%dbpath</Str>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">DELETE FROM clipboardmanager;</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">%dummy</Str>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_action_autorenew</nme>
+		</Img>
+	</Task>
+</TaskerData>
