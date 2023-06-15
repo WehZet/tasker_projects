@@ -1,3 +1,5 @@
+[Taskernet-Link](https://taskernet.com/shares/?user=AS35m8ks8HbsdHFuQd8IQwuQOnRpbi3s1kNACT0seG%2Ftrt9xPGrDRmNw71%2BgbKj6vg1mISfy&id=Project%3AClipboard+Manager)
+
 A Simple Clipboard Manager using List Dialogs.<br>
 Stores the clipboard texts in a SQlite database.<br>
 The number of stored entries can be chosen at the import (project variable) and in a separate task (included).<br>
