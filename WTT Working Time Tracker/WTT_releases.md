@@ -2,6 +2,13 @@
 
 Working Time Tracker is a simple Tasker scene for tracking the working time with the possibility to additionally track pause times. After recording it sends the data to Google Sheets.
 
+## v0.4.0
+08.10.2023<br/>
+1) added an indicator if a comment is set
+2) added comment to notification after ending work
+3) closing scene after ending work or ending work with "End At"
+4) bugfix: when cancelling the comment input the comment will not cleared anymore
+
 ## v0.3.3
 02.07.2023<br/>
 1) bugfix: Error if using EndAt function. (element Visibility was not able to change because the Scene is not opened at this point anymore)

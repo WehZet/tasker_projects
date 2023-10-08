@@ -1,0 +1,3216 @@
+<TaskerData sr="" dvi="1" tv="6.2.13-rc">
+	<dmetric>1080.0,2320.0</dmetric>
+	<Profile sr="prof361" ve="2">
+		<cdate>1682406492322</cdate>
+		<clp>true</clp>
+		<edate>1689154115869</edate>
+		<flags>8</flags>
+		<id>361</id>
+		<mid0>362</mid0>
+		<nme>WTT Work Coming Going Via NFC</nme>
+		<Event sr="con0" ve="2">
+			<code>2076</code>
+			<pri>0</pri>
+			<Str sr="arg0" ve="3">04BCFC82E17180</Str>
+			<Str sr="arg1" ve="3">NFC work coming going</Str>
+		</Event>
+	</Profile>
+	<Profile sr="prof383" ve="2">
+		<cdate>1682839677931</cdate>
+		<clp>true</clp>
+		<edate>1696774085059</edate>
+		<flags>8</flags>
+		<id>383</id>
+		<mid0>385</mid0>
+		<mid1>384</mid1>
+		<nme>WTT Variable working</nme>
+		<State sr="con0" ve="2">
+			<code>165</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%working</lhs>
+					<op>2</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</State>
+	</Profile>
+	<Profile sr="prof392" ve="2">
+		<cdate>1682839677931</cdate>
+		<clp>true</clp>
+		<edate>1688326789771</edate>
+		<flags>8</flags>
+		<id>392</id>
+		<mid0>397</mid0>
+		<mid1>398</mid1>
+		<nme>WTT Variable pause</nme>
+		<State sr="con0" ve="2">
+			<code>165</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pause</lhs>
+					<op>2</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</State>
+	</Profile>
+	<Project sr="proj0" ve="2">
+		<cdate>1682812091405</cdate>
+		<name>Working Time Tracker</name>
+		<pids>361,383,392</pids>
+		<scenes>WTT Scene</scenes>
+		<tids>402,341,222,338,339,400,336,335,397,352,390,354,403,386,340,398,370,385,384,351,362</tids>
+		<Share sr="Share">
+			<b>false</b>
+			<d>v0.4.0&lt;br/&gt;
+By WehZet&lt;br/&gt;&lt;br/&gt;
+
+Working Time Tracker is a simple Tasker scene for tracking the working time with the possibility to additionally track pause times. After recording it sends the data to Google Sheets.&lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;## v0.4.0&lt;/h4&gt;
+08.10.2023&lt;br/&gt;
+1) added an indicator if a comment is set&lt;br&gt;
+2) added comment to notification after ending work&lt;br&gt;
+3) closing scene after ending work or ending work with "End At"&lt;br&gt;
+4) bugfix: when cancelling the comment input the comment will not cleared anymore
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;## v0.3.3&lt;/h4&gt;
+02.07.2023&lt;br/&gt;
+1) bugfix: Error if using EndAt function. (element Visibility was not able to change because the Scene is not opened at this point anymore) &lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;## v0.3.2&lt;/h4&gt;
+01.07.2023&lt;br/&gt;
+1) fixed a problem where begin an pause-begin times were set to a new time because of restarting phone etc. --&gt; Added a stop action at the beginning of the tasks which are setting the begin and pause-begin times&lt;br/&gt;
+2) all variables will now be resetted after using the "End At" function&lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;##v0.3.1&lt;/h4&gt;
+15.05.2023&lt;br/&gt;
+1) fixed failure where "now" will be set as end time even when choosing end time by user&lt;br/&gt;
+2) setting Pause to 0 before uploading and notification for correct showing&lt;br/&gt;
+3) fixed problem where pause times where rounded up&lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;## v0.3.0&lt;/h4&gt;
+14.05.2023&lt;br/&gt;
+1) Added button to change the start time&lt;br/&gt;
+2) Added button to choose the end time manuall&lt;br/&gt;
+3) Added button to change the pause time&lt;br/&gt;
+4) Added button to add comment&lt;br/&gt;
+5) Added a notification after ending the working day with the stats&lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;## v0.2.1&lt;/h4&gt;
+12.05.2023&lt;br/&gt;
+1) corrected flow of reset variable when resetting&lt;br/&gt;
+2) if pause is active, it is not anymore possible to end working via NFC resetting&lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;## v0.2&lt;/h4&gt;
+30.04.2023&lt;br/&gt;
+1) first running and useable version&lt;br/&gt;
+2) Scene:&lt;br/&gt;
+- Start/Stop working Time&lt;br/&gt;
+- Start/Stop Pause&lt;br/&gt;
+- Reset and descard all current Tracking&lt;br/&gt;
+3) Uploads all data to a Google Sheet after tracking&lt;br/&gt;&lt;br/&gt;
+
+&lt;h4&gt;## v0.1&lt;/h4&gt;
+29.04.2023&lt;br/&gt;
+1) first draft&lt;br/&gt;
+Stores times (begin, pause_begin, pause_end, end) one after the other into Task variables and then pushes them into a Google sheet</d>
+			<g>AutoSheets,Google Sheets,Work</g>
+			<p>false</p>
+			<t></t>
+		</Share>
+		<ProfileVariable sr="pv0">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>13</pvid>
+			<pvit>pj</pvit>
+			<pvn>%spreadsheet</pvn>
+			<pvt>t</pvt>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv1">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>13</pvid>
+			<pvit>pj</pvit>
+			<pvn>%date</pvn>
+			<pvt>da</pvt>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv10">
+			<clearout>false</clearout>
+			<exportval>android.resource://net.dinglisch.android.taskerm/drawable/mw_av_pause</exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>13</pvid>
+			<pvit>pj</pvit>
+			<pvn>%pausebutton</pvn>
+			<pvt>t</pvt>
+			<pvv>android.resource://net.dinglisch.android.taskerm/drawable/mw_av_pause</pvv>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv11">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>13</pvid>
+			<pvit>pj</pvit>
+			<pvn>%reset</pvn>
+			<pvt>t</pvt>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv12">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>13</pvid>
+			<pvit>pj</pvit>
+			<pvn>%comment</pvn>
+			<pvt>t</pvt>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv2">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>13</pvid>
+			<pvit>pj</pvit>
+			<pvn>%begin</pvn>
+			<pvt>ti</pvt>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv3">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>13</pvid>
+			<pvit>pj</pvit>
+			<pvn>%end</pvn>
+			<pvt>ti</pvt>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv4">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>13</pvid>
+			<pvit>pj</pvit>
+			<pvn>%pause_begin</pvn>
+			<pvt>ti</pvt>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv5">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>13</pvid>
+			<pvit>pj</pvit>
+			<pvn>%pause_end</pvn>
+			<pvt>ti</pvt>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv6">
+			<clearout>false</clearout>
+			<exportval>0</exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>13</pvid>
+			<pvit>pj</pvit>
+			<pvn>%working</pvn>
+			<pvt>t</pvt>
+			<pvv>0</pvv>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv7">
+			<clearout>false</clearout>
+			<exportval>android.resource://net.dinglisch.android.taskerm/drawable/mw_av_play_arrow</exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>13</pvid>
+			<pvit>pj</pvit>
+			<pvn>%startbutton</pvn>
+			<pvt>t</pvt>
+			<pvv>android.resource://net.dinglisch.android.taskerm/drawable/mw_av_play_arrow</pvv>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv8">
+			<clearout>false</clearout>
+			<exportval>0</exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>13</pvid>
+			<pvit>pj</pvit>
+			<pvn>%pause</pvn>
+			<pvt>t</pvt>
+			<pvv>0</pvv>
+			<strout>true</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv9">
+			<clearout>false</clearout>
+			<exportval>0</exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>13</pvid>
+			<pvit>pj</pvit>
+			<pvn>%pause_time_m</pvn>
+			<pvt>n</pvt>
+			<pvv>0</pvv>
+			<strout>true</strout>
+		</ProfileVariable>
+	</Project>
+	<Scene sr="sceneWTT Scene">
+		<cdate>1607867102107</cdate>
+		<edate>1696774077656</edate>
+		<gridSize>20</gridSize>
+		<heightLand>1080</heightLand>
+		<heightPort>1800</heightPort>
+		<nme>WTT Scene</nme>
+		<widthLand>1080</widthLand>
+		<widthPort>1080</widthPort>
+		<RectElement sr="elements0">
+			<flags>4</flags>
+			<geom>105,615,870,940,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">BgOverall</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">%bgtotalcolor</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="4"/>
+			<Str sr="arg5" ve="3">%bordercolor</Str>
+			<Int sr="arg6" val="28"/>
+			<Int sr="arg7" val="0"/>
+		</RectElement>
+		<RectElement sr="elements1">
+			<flags>4</flags>
+			<geom>140,1050,800,390,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">BgSectionPause</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">%bgsectioncolor</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="4"/>
+			<Str sr="arg5" ve="3">%bordercolor</Str>
+			<Int sr="arg6" val="28"/>
+			<Int sr="arg7" val="0"/>
+		</RectElement>
+		<ImageElement sr="elements10" ve="2">
+			<clickTask>354</clickTask>
+			<flags>4</flags>
+			<geom>865,1460,75,75,655,529,218,218</geom>
+			<Str sr="arg0" ve="3">BildExit</Str>
+			<Img sr="arg1" ve="2">
+				<nme>mw_action_exit_to_app</nme>
+			</Img>
+			<Int sr="arg2" val="255"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</ImageElement>
+		<ImageElement sr="elements11" ve="2">
+			<clickTask>370</clickTask>
+			<flags>4</flags>
+			<geom>180,860,150,150,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">ButtonStart</Str>
+			<Img sr="arg1" ve="2">
+				<var>%startbutton</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</ImageElement>
+		<ImageElement sr="elements12" ve="2">
+			<clickTask>390</clickTask>
+			<flags>4</flags>
+			<geom>180,1170,150,150,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">ButtonPause</Str>
+			<Img sr="arg1" ve="2">
+				<var>%pausebutton</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</ImageElement>
+		<RectElement sr="elements13">
+			<clickTask>400</clickTask>
+			<flags>4</flags>
+			<geom>180,860,150,150,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">FgStartStopButton</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">%bgsectioncolor</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3">#FF000000</Str>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+		</RectElement>
+		<ButtonElement sr="elements14" ve="3">
+			<clickTask>403</clickTask>
+			<flags>4</flags>
+			<geom>140,1460,200,75,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">ButtonReset</Str>
+			<Str sr="arg1" ve="3">Reset</Str>
+			<Int sr="arg2" val="12"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2"/>
+		</ButtonElement>
+		<ButtonElement sr="elements15" ve="3">
+			<clickTask>335</clickTask>
+			<flags>4</flags>
+			<geom>355,935,280,75,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">ButtonStartChange</Str>
+			<Str sr="arg1" ve="3">Change Start Time</Str>
+			<Int sr="arg2" val="12"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2"/>
+		</ButtonElement>
+		<ButtonElement sr="elements16" ve="3">
+			<clickTask>336</clickTask>
+			<flags>4</flags>
+			<geom>675,935,180,75,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">ButtonEndAt</Str>
+			<Str sr="arg1" ve="3">End at:</Str>
+			<Int sr="arg2" val="12"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2"/>
+		</ButtonElement>
+		<RectElement sr="elements17">
+			<clickTask>338</clickTask>
+			<flags>4</flags>
+			<geom>675,935,180,75,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">FgEndAtButton</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">%bgsectioncolor</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3">#FF000000</Str>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+		</RectElement>
+		<ButtonElement sr="elements18" ve="3">
+			<clickTask>339</clickTask>
+			<flags>4</flags>
+			<geom>675,1340,180,75,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">ButtonEditPause</Str>
+			<Str sr="arg1" ve="3">Edit Pause</Str>
+			<Int sr="arg2" val="12"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2"/>
+		</ButtonElement>
+		<RectElement sr="elements19">
+			<clickTask>340</clickTask>
+			<flags>4</flags>
+			<geom>675,1340,180,75,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">FgEditPauseButton</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">%bgsectioncolor</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3">#FF000000</Str>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+		</RectElement>
+		<RectElement sr="elements2">
+			<flags>4</flags>
+			<geom>140,740,800,300,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">BgSectionStartStop</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">%bgsectioncolor</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="4"/>
+			<Str sr="arg5" ve="3">%bordercolor</Str>
+			<Int sr="arg6" val="28"/>
+			<Int sr="arg7" val="0"/>
+		</RectElement>
+		<ButtonElement sr="elements20" ve="3">
+			<clickTask>341</clickTask>
+			<flags>4</flags>
+			<geom>450,1460,200,75,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">ButtonComment</Str>
+			<Str sr="arg1" ve="3">Comment</Str>
+			<Int sr="arg2" val="12"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2"/>
+		</ButtonElement>
+		<OvalElement sr="elements21">
+			<flags>4</flags>
+			<geom>660,1480,35,35,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">IndicatorComment</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">%textstatecolor</Str>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3">#FF000000</Str>
+		</OvalElement>
+		<TextElement sr="elements3" ve="3">
+			<flags>4</flags>
+			<geom>355,860,500,75,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">TextBegin</Str>
+			<Str sr="arg1" ve="3">At work since %begin</Str>
+			<Int sr="arg2" val="20"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">%textstatecolor</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="7"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</TextElement>
+		<TextElement sr="elements4" ve="3">
+			<flags>4</flags>
+			<geom>175,1050,250,100,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">TextHeadlinePause</Str>
+			<Str sr="arg1" ve="3">Pause</Str>
+			<Int sr="arg2" val="20"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+		</TextElement>
+		<TextElement sr="elements5" ve="3">
+			<flags>4</flags>
+			<geom>175,740,250,100,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">TextHeadlineStartStop</Str>
+			<Str sr="arg1" ve="3">Start/Stop</Str>
+			<Int sr="arg2" val="20"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+		</TextElement>
+		<TextElement sr="elements6" ve="3">
+			<flags>4</flags>
+			<geom>140,615,800,120,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">TextHeadline</Str>
+			<Str sr="arg1" ve="3">Working Time Tracker</Str>
+			<Int sr="arg2" val="25"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+		</TextElement>
+		<TextElement sr="elements7" ve="3">
+			<flags>4</flags>
+			<geom>180,1340,400,100,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">TextPauseMinutes</Str>
+			<Str sr="arg1" ve="3">Pause: %pause_time_m minutes</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">%textstatecolor</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="5"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</TextElement>
+		<TextElement sr="elements8" ve="3">
+			<flags>4</flags>
+			<geom>355,1170,500,150,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">TextPauseSince</Str>
+			<Str sr="arg1" ve="3">Pause since %pause_begin</Str>
+			<Int sr="arg2" val="20"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">%textstatecolor</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</TextElement>
+		<RectElement sr="elements9">
+			<flags>4</flags>
+			<geom>105,615,870,940,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">BgOverallTransparentTouchSaver</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3">%bordercolor</Str>
+			<Int sr="arg6" val="28"/>
+			<Int sr="arg7" val="0"/>
+		</RectElement>
+		<PropertiesElement sr="props">
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">#002F2F2F</Str>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">Settings</Str>
+			<Str sr="arg5" ve="3"/>
+			<Img sr="arg6" ve="2"/>
+			<Str sr="arg7" ve="3"/>
+		</PropertiesElement>
+	</Scene>
+	<Task sr="task222">
+		<cdate>1684073667410</cdate>
+		<edate>1696774303605</edate>
+		<id>222</id>
+		<nme>WTT Edit</nme>
+		<Action sr="act0" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%errmsg</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>49</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">Start Scene again</Str>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>394</code>
+			<label>Formatting chosen end time</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%end
+00. End
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%dt_millis
+1. MilliSeconds
+Milliseconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%dt_seconds
+2. Seconds
+Seconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%dt_day_of_month
+3. Day Of Month
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%dt_month_of_year
+4. Month Of Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%dt_year
+5. Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Str sr="arg2" ve="3">%input</Str>
+			<Str sr="arg3" ve="3">HH.mm</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3">HH:mm</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%end</Str>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>130</code>
+			<label>Setting project variable "working" to 0</label>
+			<Str sr="arg0" ve="3">WTT Set Project Variables</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">working</Str>
+			<Str sr="arg3" ve="3">0</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>130</code>
+			<label>Setting project variable "pause" to 0</label>
+			<Str sr="arg0" ve="3">WTT Set Project Variables</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">pause</Str>
+			<Str sr="arg3" ve="3">0</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">WTT Reset</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">No visibility changes from EndAt</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>49</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>43</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;Edit Pause&lt;/font&gt;&lt;/h4&gt;</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>EditPause</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>360</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%input
+Input
+The text that was inserted in the dialog&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">insert time</Str>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">%pause_time_m</Str>
+			<Int sr="arg4" val="120"/>
+			<Str sr="arg5" ve="3">4098</Str>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+		</Action>
+		<Action sr="act19" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Edit Pause time cancelled. Nothing changed!</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Error</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>37</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;Change start time&lt;/font&gt;&lt;/h4&gt;</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>StartTime</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act20" ve="7">
+			<code>547</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">%pause_time_m</Str>
+			<Str sr="arg1" ve="3">%input</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act21" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">Start Scene again</Str>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act22" ve="7">
+			<code>43</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;Edit comment&lt;/font&gt;&lt;/h4&gt;</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>EditComment</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act23" ve="7">
+			<code>360</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%input
+Input
+The text that was inserted in the dialog&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">insert/edit comment</Str>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">%comment</Str>
+			<Int sr="arg4" val="120"/>
+			<Str sr="arg5" ve="3">131153</Str>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+		</Action>
+		<Action sr="act24" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Insert/edit comment cancelled. Nothing changed!</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Error</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act25" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">Start Scene again</Str>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act26" ve="7">
+			<code>547</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">%comment</Str>
+			<Str sr="arg1" ve="3">%input</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act27" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act28" ve="7">
+			<code>130</code>
+			<label>Start Scene again</label>
+			<Str sr="arg0" ve="3">WTT Start Scene</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>390</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%input
+Input
+The text that was retrieved from the dialog&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">Time</Str>
+			<Str sr="arg2" ve="3">Choose new Start Time</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="30"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Pick Time cancelled. Nothing changed!</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Error</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">Start Scene again</Str>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>394</code>
+			<label>Formatting chosen start time</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%begin
+00. Begin
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%dt_millis
+1. MilliSeconds
+Milliseconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%dt_seconds
+2. Seconds
+Seconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%dt_day_of_month
+3. Day Of Month
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%dt_month_of_year
+4. Month Of Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%dt_year
+5. Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Str sr="arg2" ve="3">%input</Str>
+			<Str sr="arg3" ve="3">HH.mm</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3">HH:mm</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%begin</Str>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>43</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;End At&lt;/font&gt;&lt;/h4&gt;</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>EndAt</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>390</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%input
+Input
+The text that was retrieved from the dialog&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">Time</Str>
+			<Str sr="arg2" ve="3">Choose End Time</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="30"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Pick Time cancelled. Nothing changed!</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Error</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_editor_mode_edit</nme>
+			<tint>-1</tint>
+		</Img>
+	</Task>
+	<Task sr="task335">
+		<cdate>1682892882386</cdate>
+		<edate>1682892882386</edate>
+		<id>335</id>
+		<pri>9</pri>
+		<Action sr="act0" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">WTT Edit</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">StartTime</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task336">
+		<cdate>1682892882386</cdate>
+		<edate>1682892882386</edate>
+		<id>336</id>
+		<pri>106</pri>
+		<Action sr="act0" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">WTT Edit</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">EndAt</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task338">
+		<cdate>1682890677779</cdate>
+		<edate>1682890677779</edate>
+		<id>338</id>
+		<pri>102</pri>
+		<Action sr="act0" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">End Pause first! </Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Pause active</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">#FFF78E8E</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task339">
+		<cdate>1682892882386</cdate>
+		<edate>1682892882386</edate>
+		<id>339</id>
+		<pri>104</pri>
+		<Action sr="act0" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">WTT Edit</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">EditPause</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task340">
+		<cdate>1682890677779</cdate>
+		<edate>1682890677779</edate>
+		<id>340</id>
+		<pri>102</pri>
+		<Action sr="act0" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">End Pause first! </Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Pause active</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">#FFF78E8E</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task341">
+		<cdate>1684078509059</cdate>
+		<edate>1684078509059</edate>
+		<id>341</id>
+		<pri>102</pri>
+		<Action sr="act0" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">WTT Edit</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">EditComment</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task351">
+		<cdate>1660506336569</cdate>
+		<edate>1696774314205</edate>
+		<id>351</id>
+		<nme>WTT Info</nme>
+		<Action sr="act0" ve="7">
+			<code>300</code>
+			<label>&lt;h3&gt;&lt;font color=red&gt;Working Time Tracker&lt;/font&gt;&lt;/h3&gt;&lt;br&gt;&lt;h5&gt;&lt;font color=green&gt;v0.3.3&lt;br&gt;by WehZet&lt;br&gt;&lt;br&gt;Hope you like it!&lt;br&gt;Any problems with the Working Time Tracker? Contact me on Reddit: u/WehZet &lt;/h5&gt;&lt;/font&gt;</label>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;ideas&lt;/font&gt;&lt;/h4&gt;
+&lt;b&gt;- question if you like to set the end time and upload after choosing end time. If not do nothing. 
+ &lt;br/&gt;- initial task create spreadsheet and to set the %spreadsheet variable 
+&lt;br/&gt;- for start work task, if start time is already set, stop the start task. otherwhise the start time will be overwritten (e.g. at reboot of device)... Same at for pause.... Tried with stop --&gt; testing
+&lt;br/&gt;- Store the values in a db because of problems with project variables? 
+&lt;br/&gt;- if stop date is next day, split to two days and save seperately
+&lt;/b&gt;</label>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v0.4.0&lt;br/&gt;08.10.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;h5 align="left"&gt;
+1) added an indicator if a comment is set&lt;br&gt;
+2) added comment to notification after ending work&lt;br&gt;
+3) closing scene after ending work or ending work with "End At"&lt;br&gt;
+4) bugfix: when cancelling the comment input the comment will not cleared anymore
+&lt;/h5&gt;</label>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v0.3.3&lt;br/&gt;02.07.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;h5 align="left"&gt;
+1) bugfix: Error if using EndAt function. (element Visibility was not able to change because the Scene is not opened at this point anymore) 
+&lt;/h5&gt;</label>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v0.3.2&lt;br/&gt;01.07.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;h5 align="left"&gt;
+1) fixed a problem where begin an pause-begin times were set to a new time because of restarting phone etc. --&gt; Added a stop action at the beginning of the tasks which are setting the begin and pause-begin times&lt;br/&gt;
+2) all variables will now be resetted after using the "End At" function
+&lt;/h5&gt;</label>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v0.3.1&lt;br/&gt;15.05.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;h5 align="left"&gt;
+1) fixed failure where "now" will be set as end time even when choosing end time by user&lt;br/&gt;
+2) setting Pause to 0 before uploading and notification for correct showing&lt;br/&gt;
+3) fixed problem where pause times where rounded up
+&lt;/h5&gt;</label>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v0.3.0&lt;br/&gt;14.05.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;h5 align="left"&gt;
+1) Added button to change the start time&lt;br/&gt;
+2) Added button to choose the end time manuall&lt;br/&gt;
+3) Added button to change the pause time&lt;br/&gt;
+4) Added button to add comment&lt;br/&gt;
+5) Added a notification after ending the working day with the stats
+&lt;/h5&gt;</label>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v0.2.1&lt;br/&gt;12.05.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;h5 align="left"&gt;1) corrected flow of reset variable when resetting&lt;br/&gt;
+2) if pause is active, it is not anymore possible to end working via NFC
+&lt;/h5&gt;</label>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v0.2&lt;br/&gt;30.04.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;h5 align="left"&gt;1) first running and useable version&lt;br/&gt;
+2) Scene:&lt;br/&gt;
+- Start/Stop working Time&lt;br/&gt;
+- Start/Stop Pause&lt;br/&gt;
+- Reset and descard all current Tracking&lt;br/&gt;
+3) Uploads all data to a Google Sheet after tracking
+&lt;/h5&gt;</label>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>300</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;v0.1&lt;br/&gt;29.04.2023&lt;/font&gt;&lt;/h4&gt;
+&lt;h5 align="left"&gt;1) first draft&lt;br/&gt;
+Stores times (begin, pause_begin, pause_end, end) one after the other into Task variables and then pushes them into a Google sheet
+&lt;/h5&gt;</label>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_action_info_outline</nme>
+		</Img>
+	</Task>
+	<Task sr="task352">
+		<cdate>1607868844776</cdate>
+		<edate>1696772152535</edate>
+		<id>352</id>
+		<nme>WTT Start Scene</nme>
+		<pri>100</pri>
+		<Kid sr="Kid">
+			<launchID>22</launchID>
+			<pkg>at.nhffghjkk.jhghgg</pkg>
+			<vTarg>29</vTarg>
+			<vnme>1.0</vnme>
+		</Kid>
+		<Action sr="act0" ve="7">
+			<code>397</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%my_accent1_0
+Material You Accent 1 – 0
+Lightest shade of the accent color used by the system. White.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%my_accent1_10
+Material You Accent 1 – 10
+Shade of the accent system color at 99% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%my_accent1_100
+Material You Accent 1 – 100
+Shade of the accent system color at 90% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%my_accent1_1000
+Material You Accent 1 – 1000
+Darkest shade of the accent color used by the system. Black.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%my_accent1_200
+Material You Accent 1 – 200
+Shade of the accent system color at 80% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%my_accent1_300
+Material You Accent 1 – 300
+Shade of the accent system color at 70% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES6&gt;%my_accent1_400
+Material You Accent 1 – 400
+Shade of the accent system color at 60% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES6&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES7&gt;%my_accent1_50
+Material You Accent 1 – 50
+Shade of the accent system color at 95% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES7&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES8&gt;%my_accent1_500
+Material You Accent 1 – 500
+Shade of the accent system color at 49% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES8&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES9&gt;%my_accent1_600
+Material You Accent 1 – 600
+Shade of the accent system color at 40% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES9&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES10&gt;%my_accent1_700
+Material You Accent 1 – 700
+Shade of the accent system color at 30% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES10&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES11&gt;%my_accent1_800
+Material You Accent 1 – 800
+Shade of the accent system color at 20% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES11&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES12&gt;%my_accent1_900
+Material You Accent 1 – 900
+Shade of the accent system color at 10% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES12&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES13&gt;%my_accent2_0
+Material You Accent 2 – 0
+Lightest shade of the secondary accent color used by the system. White.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES13&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES14&gt;%my_accent2_10
+Material You Accent 2 – 10
+Shade of the secondary accent system color at 99% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES14&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES15&gt;%my_accent2_100
+Material You Accent 2 – 100
+Shade of the secondary accent system color at 90% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES15&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES16&gt;%my_accent2_1000
+Material You Accent 2 – 1000
+Darkest shade of the secondary accent color used by the system. Black.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES16&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES17&gt;%my_accent2_200
+Material You Accent 2 – 200
+Shade of the secondary accent system color at 80% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES17&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES18&gt;%my_accent2_300
+Material You Accent 2 – 300
+Shade of the secondary accent system color at 70% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES18&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES19&gt;%my_accent2_400
+Material You Accent 2 – 400
+Shade of the secondary accent system color at 60% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES19&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES20&gt;%my_accent2_50
+Material You Accent 2 – 50
+Shade of the secondary accent system color at 95% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES20&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES21&gt;%my_accent2_500
+Material You Accent 2 – 500
+Shade of the secondary accent system color at 49% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES21&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES22&gt;%my_accent2_600
+Material You Accent 2 – 600
+Shade of the secondary accent system color at 40% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES22&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES23&gt;%my_accent2_700
+Material You Accent 2 – 700
+Shade of the secondary accent system color at 30% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES23&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES24&gt;%my_accent2_800
+Material You Accent 2 – 800
+Shade of the secondary accent system color at 20% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES24&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES25&gt;%my_accent2_900
+Material You Accent 2 – 900
+Shade of the secondary accent system color at 10% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES25&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES26&gt;%my_accent3_0
+Material You Accent 3 – 0
+Lightest shade of the tertiary accent color used by the system. White.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES26&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES27&gt;%my_accent3_10
+Material You Accent 3 – 10
+Shade of the tertiary accent system color at 99% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES27&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES28&gt;%my_accent3_100
+Material You Accent 3 – 100
+Shade of the tertiary accent system color at 90% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES28&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES29&gt;%my_accent3_1000
+Material You Accent 3 – 1000
+Darkest shade of the tertiary accent color used by the system. Black.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES29&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES30&gt;%my_accent3_200
+Material You Accent 3 – 200
+Shade of the tertiary accent system color at 80% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES30&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES31&gt;%my_accent3_300
+Material You Accent 3 – 300
+Shade of the tertiary accent system color at 70% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES31&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES32&gt;%my_accent3_400
+Material You Accent 3 – 400
+Shade of the tertiary accent system color at 60% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES32&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES33&gt;%my_accent3_50
+Material You Accent 3 – 50
+Shade of the tertiary accent system color at 95% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES33&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES34&gt;%my_accent3_500
+Material You Accent 3 – 500
+Shade of the tertiary accent system color at 49% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES34&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES35&gt;%my_accent3_600
+Material You Accent 3 – 600
+Shade of the tertiary accent system color at 40% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES35&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES36&gt;%my_accent3_700
+Material You Accent 3 – 700
+Shade of the tertiary accent system color at 30% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES36&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES37&gt;%my_accent3_800
+Material You Accent 3 – 800
+Shade of the tertiary accent system color at 20% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES37&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES38&gt;%my_accent3_900
+Material You Accent 3 – 900
+Shade of the tertiary accent system color at 10% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES38&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES39&gt;%my_neutral1_0
+Material You Neutral 1 – 0
+Lightest shade of the neutral color used by the system. White.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES39&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES40&gt;%my_neutral1_10
+Material You Neutral 1 – 10
+Shade of the neutral system color at 99% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES40&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES41&gt;%my_neutral1_100
+Material You Neutral 1 – 100
+Shade of the neutral system color at 90% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES41&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES42&gt;%my_neutral1_1000
+Material You Neutral 1 – 1000
+Darkest shade of the neutral color used by the system. Black.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES42&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES43&gt;%my_neutral1_200
+Material You Neutral 1 – 200
+Shade of the neutral system color at 80% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES43&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES44&gt;%my_neutral1_300
+Material You Neutral 1 – 300
+Shade of the neutral system color at 70% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES44&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES45&gt;%my_neutral1_400
+Material You Neutral 1 – 400
+Shade of the neutral system color at 60% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES45&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES46&gt;%my_neutral1_50
+Material You Neutral 1 – 50
+Shade of the neutral system color at 95% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES46&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES47&gt;%my_neutral1_500
+Material You Neutral 1 – 500
+Shade of the neutral system color at 49% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES47&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES48&gt;%my_neutral1_600
+Material You Neutral 1 – 600
+Shade of the neutral system color at 40% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES48&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES49&gt;%my_neutral1_700
+Material You Neutral 1 – 700
+Shade of the neutral system color at 30% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES49&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES50&gt;%my_neutral1_800
+Material You Neutral 1 – 800
+Shade of the neutral system color at 20% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES50&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES51&gt;%my_neutral1_900
+Material You Neutral 1 – 900
+Shade of the neutral system color at 10% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES51&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES52&gt;%my_neutral2_0
+Material You Neutral 2 – 0
+Lightest shade of the secondary neutral color used by the system. White.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES52&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES53&gt;%my_neutral2_10
+Material You Neutral 2 – 10
+Shade of the secondary neutral system color at 99% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES53&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES54&gt;%my_neutral2_100
+Material You Neutral 2 – 100
+Shade of the secondary neutral system color at 90% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES54&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES55&gt;%my_neutral2_1000
+Material You Neutral 2 – 1000
+Darkest shade of the secondary neutral color used by the system. Black.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES55&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES56&gt;%my_neutral2_200
+Material You Neutral 2 – 200
+Shade of the secondary neutral system color at 80% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES56&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES57&gt;%my_neutral2_300
+Material You Neutral 2 – 300
+Shade of the secondary neutral system color at 70% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES57&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES58&gt;%my_neutral2_400
+Material You Neutral 2 – 400
+Shade of the secondary neutral system color at 60% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES58&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES59&gt;%my_neutral2_50
+Material You Neutral 2 – 50
+Shade of the secondary neutral system color at 95% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES59&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES60&gt;%my_neutral2_500
+Material You Neutral 2 – 500
+Shade of the secondary neutral system color at 49% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES60&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES61&gt;%my_neutral2_600
+Material You Neutral 2 – 600
+Shade of the secondary neutral system color at 40% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES61&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES62&gt;%my_neutral2_700
+Material You Neutral 2 – 700
+Shade of the secondary neutral system color at 30% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES62&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES63&gt;%my_neutral2_800
+Material You Neutral 2 – 800
+Shade of the secondary neutral system color at 20% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES63&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES64&gt;%my_neutral2_900
+Material You Neutral 2 – 900
+Shade of the secondary neutral system color at 10% lightness.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES64&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>389</code>
+			<label>Farbe für die Indicatoren/Rahmen.
+
+%bgabschnittcolor - #F02F2F2F
+%bggesamtcolor - #C02F2F2F</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""/&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%indicatorcolor
+%bordercolor
+%bgsectioncolor
+%bgtotalcolor
+%textstatecolor</Str>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">%my_accent1_500
+%my_accent2_900
+#F02F2F2F
+#C02F2F2F
+#FFC10B0B</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="1"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">TextPauseSince</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pause</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">TextPauseMinutes</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pause_time_m</lhs>
+					<op>13</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">FgStartStopButton</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pause</lhs>
+					<op>3</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">FgEndAtButton</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pause</lhs>
+					<op>3</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">FgEditPauseButton</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pause</lhs>
+					<op>3</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>47</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Int sr="arg1" val="2"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg2" val="100"/>
+			<Int sr="arg3" val="123"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonPause</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%working</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">TextBegin</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%working</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonStartChange</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%working</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonEndAt</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%working</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonEditPause</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%working</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonComment</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%working</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">IndicatorComment</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%comment</lhs>
+					<op>13</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_action_settings_overscan</nme>
+			<tint>-1</tint>
+		</Img>
+	</Task>
+	<Task sr="task354">
+		<cdate>1607868970299</cdate>
+		<edate>1607868970299</edate>
+		<id>354</id>
+		<pri>9</pri>
+		<Action sr="act0" ve="7">
+			<code>30</code>
+			<Int sr="arg0" val="150"/>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>49</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+		</Action>
+	</Task>
+	<Task sr="task362">
+		<cdate>1682406498272</cdate>
+		<edate>1689154115869</edate>
+		<id>362</id>
+		<pri>6</pri>
+		<Action sr="act0" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%working</lhs>
+					<op>2</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<label>If pause=1,don't stop working</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pause</lhs>
+					<op>2</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Varibale is set to: %working</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Failure variable working</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">End Pause first! </Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">working not stopped. </Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%working</Str>
+			<Str sr="arg1" ve="3">0</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>43</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%working</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%working</Str>
+			<Str sr="arg1" ve="3">1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>43</code>
+			<ConditionList sr="if">
+				<bool0>And</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%working</lhs>
+					<op>3</op>
+					<rhs>0</rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%working</lhs>
+					<op>3</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<ProfileVariable sr="pv0">
+			<clearout>true</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>362</pvid>
+			<pvit>t</pvit>
+			<pvn>%file</pvn>
+			<pvt>t</pvt>
+			<pvv>Tasker/database/NFCwork.txt</pvv>
+			<strout>true</strout>
+		</ProfileVariable>
+	</Task>
+	<Task sr="task370">
+		<cdate>1636990132759</cdate>
+		<edate>1636990132759</edate>
+		<id>370</id>
+		<pri>9</pri>
+		<Action sr="act0" ve="7">
+			<code>30</code>
+			<Int sr="arg0" val="150"/>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<label>&lt;h4&gt;&lt;font color=green&gt;starting work&lt;/font&gt;&lt;/h4&gt;</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%working</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>130</code>
+			<label>Setting project variable "working" to 0</label>
+			<Str sr="arg0" ve="3">WTT Set Project Variables</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">working</Str>
+			<Str sr="arg3" ve="3">0</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>130</code>
+			<label>Setting project variable "pause" to 0</label>
+			<Str sr="arg0" ve="3">WTT Set Project Variables</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">pause</Str>
+			<Str sr="arg3" ve="3">0</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>65</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonPause</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>65</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">TextBegin</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>65</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonStartChange</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>65</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonEndAt</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>65</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonEditPause</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>65</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonComment</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>65</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">TextPauseMinutes</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act19" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>130</code>
+			<label>Setting project variable "working" to 1</label>
+			<Str sr="arg0" ve="3">WTT Set Project Variables</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">working</Str>
+			<Str sr="arg3" ve="3">1</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonPause</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">TextBegin</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonStartChange</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonEndAt</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonEditPause</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonComment</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>43</code>
+			<label>&lt;h4&gt;&lt;font color=green&gt;ending work&lt;/font&gt;&lt;/h4&gt;</label>
+		</Action>
+	</Task>
+	<Task sr="task384">
+		<cdate>1682839681321</cdate>
+		<edate>1696774085059</edate>
+		<id>384</id>
+		<Action sr="act0" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<label>Stop here if Reset</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%reset</lhs>
+					<op>2</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%reset</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>123</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">echo '\0'</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%comment</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%comment</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>1411074191</code>
+			<label>Write to Google Sheet</label>
+			<on>false</on>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<com.twofortyfouram.locale.intent.extra.BLURB>Spreadsheet ID: %spreadsheet
+Rows Or Columns: Rows
+Data: %DATE~~~%begin~~~%end~~~%hours:%minutes:0~~~%comment()
+Separator: ~~~
+Row Separator: +++
+Mode: Parsed</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.JSON_ENCODED_KEYS>parameters</net.dinglisch.android.tasker.JSON_ENCODED_KEYS>
+					<net.dinglisch.android.tasker.JSON_ENCODED_KEYS-type>java.lang.String</net.dinglisch.android.tasker.JSON_ENCODED_KEYS-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%asupdatedrange
+Updated Range
+The A1 notation of the range that was updated&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>parameters plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<parameters>{"_cellByReference":{"reference":""},"_offlineSettings":{"updateLaterIfOffline":false},"_sheetData":{"data":"%DATE~~~%begin~~~%end~~~%hours:%minutes:0~~~%comment()","lineSeparator":"+++","majorDimension":"0","mode":"1","separator":"~~~"},"_spreadSheet":{"createSheetIfNeeded":false,"spreadsheetId":"%spreadsheet"},"generatedValues":{}}</parameters>
+					<parameters-type>java.lang.String</parameters-type>
+					<plugininstanceid>6f9d0d66-ec68-468b-aa36-2b7dfb0114da</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autosheets.intent.IntentAddRow</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autosheets</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autosheets.activity.ActivityConfigAddRows</Str>
+			<Int sr="arg3" val="60"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>1411074191</code>
+			<label>Write to Google Sheet with comment</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<com.twofortyfouram.locale.intent.extra.BLURB>Spreadsheet ID: %spreadsheet
+Rows Or Columns: Rows
+Data: %DATE~~~%begin~~~%end~~~%hours:%minutes:0~~~%comment
+Separator: ~~~
+Row Separator: +++
+Mode: Parsed</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.JSON_ENCODED_KEYS>parameters</net.dinglisch.android.tasker.JSON_ENCODED_KEYS>
+					<net.dinglisch.android.tasker.JSON_ENCODED_KEYS-type>java.lang.String</net.dinglisch.android.tasker.JSON_ENCODED_KEYS-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%asupdatedrange
+Updated Range
+The A1 notation of the range that was updated&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>parameters plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<parameters>{"_cellByReference":{"reference":""},"_offlineSettings":{"updateLaterIfOffline":false},"_sheetData":{"data":"%DATE~~~%begin~~~%end~~~%hours:%minutes:0~~~%comment","lineSeparator":"+++","majorDimension":"0","mode":"1","separator":"~~~"},"_spreadSheet":{"createSheetIfNeeded":false,"spreadsheetId":"%spreadsheet"},"generatedValues":{}}</parameters>
+					<parameters-type>java.lang.String</parameters-type>
+					<plugininstanceid>6f9d0d66-ec68-468b-aa36-2b7dfb0114da</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autosheets.intent.IntentAddRow</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autosheets</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autosheets.activity.ActivityConfigAddRows</Str>
+			<Int sr="arg3" val="60"/>
+			<Int sr="arg4" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%comment</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%comment</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>1411074191</code>
+			<label>Write to Google Sheet without comment</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<com.twofortyfouram.locale.intent.extra.BLURB>Spreadsheet ID: %spreadsheet
+Rows Or Columns: Rows
+Data: %DATE~~~%begin~~~%end~~~%hours:%minutes:0
+Separator: ~~~
+Row Separator: +++
+Mode: Parsed</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.JSON_ENCODED_KEYS>parameters</net.dinglisch.android.tasker.JSON_ENCODED_KEYS>
+					<net.dinglisch.android.tasker.JSON_ENCODED_KEYS-type>java.lang.String</net.dinglisch.android.tasker.JSON_ENCODED_KEYS-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>parameters plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<parameters>{"_cellByReference":{"reference":""},"_offlineSettings":{"updateLaterIfOffline":false},"_sheetData":{"data":"%DATE~~~%begin~~~%end~~~%hours:%minutes:0","lineSeparator":"+++","majorDimension":"0","mode":"1","separator":"~~~"},"_spreadSheet":{"createSheetIfNeeded":false,"spreadsheetId":"%spreadsheet"},"generatedValues":{}}</parameters>
+					<parameters-type>java.lang.String</parameters-type>
+					<plugininstanceid>6f9d0d66-ec68-468b-aa36-2b7dfb0114da</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autosheets.intent.IntentAddRow</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autosheets</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autosheets.activity.ActivityConfigAddRows</Str>
+			<Int sr="arg3" val="60"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%comment</Str>
+			<Str sr="arg1" ve="3">no comment</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>523</code>
+			<Str sr="arg0" ve="3">My Working Day On %DATE</Str>
+			<Str sr="arg1" ve="3">Today I worked from %begin to %end with %pause_time_m minutes of Pause.
+
+Comment:
+%comment</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3"/>
+			<Img sr="arg2" ve="2">
+				<nme>mw_action_work</nme>
+				<tint>-1</tint>
+			</Img>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>49</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+		</Action>
+		<Action sr="act19" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%begin</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act20" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%end</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act21" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%pause_begin</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act22" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%pause_end</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act23" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%pause_time_m</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act24" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%comment</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>547</code>
+			<label>Setting Start/Stop Button in Scene to play-arrow</label>
+			<Str sr="arg0" ve="3">%startbutton</Str>
+			<Str sr="arg1" ve="3">android.resource://net.dinglisch.android.taskerm/drawable/mw_av_play_arrow</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>547</code>
+			<label>If no pause, set pause to 0</label>
+			<Str sr="arg0" ve="3">%pause_time_m</Str>
+			<Str sr="arg1" ve="3">0</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pause_time_m</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>547</code>
+			<label>Calculate pause time (minutes) to it's hours</label>
+			<Str sr="arg0" ve="3">%hours</Str>
+			<Str sr="arg1" ve="3">floor(%pause_time_m/60)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>547</code>
+			<label>Calculate pause time (minutes) to it's minutes after full hours</label>
+			<Str sr="arg0" ve="3">%minutes</Str>
+			<Str sr="arg1" ve="3">%pause_time_m%60</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>394</code>
+			<label>Formatting end time</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%end
+00. End
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%dt_millis
+1. MilliSeconds
+Milliseconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%dt_seconds
+2. Seconds
+Seconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%dt_day_of_month
+3. Day Of Month
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%dt_month_of_year
+4. Month Of Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%dt_year
+5. Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3">HH:mm</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%end</Str>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%end</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%end</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Leaving work at</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task385">
+		<cdate>1682839749663</cdate>
+		<edate>1696773401813</edate>
+		<id>385</id>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Begin time already set
+%begin</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%begin</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%begin</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>547</code>
+			<label>Setting Start/Stop Button in Scene to Stop</label>
+			<Str sr="arg0" ve="3">%startbutton</Str>
+			<Str sr="arg1" ve="3">android.resource://net.dinglisch.android.taskerm/drawable/mw_av_stop</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>394</code>
+			<label>Formatting begin time</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%begin
+00. Begin
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%dt_millis
+1. MilliSeconds
+Milliseconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%dt_seconds
+2. Seconds
+Seconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%dt_day_of_month
+3. Day Of Month
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%dt_month_of_year
+4. Month Of Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%dt_year
+5. Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3">HH:mm</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%begin</Str>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%begin</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Coming to work at</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task386">
+		<cdate>1682842317505</cdate>
+		<edate>1696773145432</edate>
+		<id>386</id>
+		<nme>WTT Set Project Variables</nme>
+		<Action sr="act0" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%%par1</Str>
+			<Str sr="arg1" ve="3">%par2</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_action_settings_applications</nme>
+			<tint>-1</tint>
+		</Img>
+	</Task>
+	<Task sr="task390">
+		<cdate>1636990132759</cdate>
+		<edate>1636990132759</edate>
+		<id>390</id>
+		<pri>9</pri>
+		<Action sr="act0" ve="7">
+			<code>30</code>
+			<Int sr="arg0" val="150"/>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pause</lhs>
+					<op>2</op>
+					<rhs>0</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">FgStartStopButton</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">FgEndAtButton</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">FgEditPauseButton</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>130</code>
+			<label>Setting project variable "pause" to 1</label>
+			<Str sr="arg0" ve="3">WTT Set Project Variables</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">pause</Str>
+			<Str sr="arg3" ve="3">1</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">TextPauseSince</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">FgStartStopButton</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">FgEndAtButton</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">FgEditPauseButton</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>130</code>
+			<label>Setting project variable "pause" to 0</label>
+			<Str sr="arg0" ve="3">WTT Set Project Variables</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">pause</Str>
+			<Str sr="arg3" ve="3">0</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">TextPauseSince</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task397">
+		<cdate>1682863571390</cdate>
+		<edate>1688167489415</edate>
+		<id>397</id>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Pause-Begin time already set
+%pause_begin</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pause_begin</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pause_begin</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>547</code>
+			<label>Setting Pause Button in Scene to Stop</label>
+			<Str sr="arg0" ve="3">%pausebutton</Str>
+			<Str sr="arg1" ve="3">android.resource://net.dinglisch.android.taskerm/drawable/mw_av_stop</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>394</code>
+			<label>Formatting pause_begin time</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%pause_begin
+00. Pause begin
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%dt_millis
+1. MilliSeconds
+Milliseconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%dt_seconds
+2. Seconds
+Seconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%dt_day_of_month
+3. Day Of Month
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%dt_month_of_year
+4. Month Of Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%dt_year
+5. Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3">HH:mm</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%pause_begin</Str>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task398">
+		<cdate>1682864891483</cdate>
+		<edate>1688326789771</edate>
+		<id>398</id>
+		<Action sr="act0" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<label>Stop here if Reset</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%reset</lhs>
+					<op>2</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%reset</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%pause_begin</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%pause_end</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">TextPauseMinutes</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pause_time_m</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%pause_time_m</Str>
+			<Str sr="arg1" ve="3">0</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%pause_time_m</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>547</code>
+			<label>Setting Pause Button in Scene to Pause</label>
+			<Str sr="arg0" ve="3">%pausebutton</Str>
+			<Str sr="arg1" ve="3">android.resource://net.dinglisch.android.taskerm/drawable/mw_av_pause</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>394</code>
+			<label>Formatting pause_end time</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%pause_end
+00. Pause end
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%dt_millis
+1. MilliSeconds
+Milliseconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%dt_seconds
+2. Seconds
+Seconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%dt_day_of_month
+3. Day Of Month
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%dt_month_of_year
+4. Month Of Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%dt_year
+5. Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3">HH:mm</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%pause_end</Str>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>590</code>
+			<Str sr="arg0" ve="3">%pause_begin</Str>
+			<Str sr="arg1" ve="3">:</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>590</code>
+			<Str sr="arg0" ve="3">%pause_end</Str>
+			<Str sr="arg1" ve="3">:</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>547</code>
+			<label>Calculating the minutes of pause</label>
+			<Str sr="arg0" ve="3">%pause_time_m</Str>
+			<Str sr="arg1" ve="3">%pause_time_m+((%pause_end1*60)+%pause_end2)-((%pause_begin1*60)+%pause_begin2)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task400">
+		<cdate>1682890677779</cdate>
+		<edate>1682890677779</edate>
+		<id>400</id>
+		<pri>102</pri>
+		<Action sr="act0" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">End Pause first! </Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3">Pause active</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">#FFF78E8E</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task402">
+		<cdate>1682892834936</cdate>
+		<edate>1696773369176</edate>
+		<id>402</id>
+		<nme>WTT Reset</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%startbutton</Str>
+			<Str sr="arg1" ve="3">android.resource://net.dinglisch.android.taskerm/drawable/mw_av_play_arrow</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%pausebutton</Str>
+			<Str sr="arg1" ve="3">android.resource://net.dinglisch.android.taskerm/drawable/mw_av_pause</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">TextBegin</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonStartChange</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonEndAt</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonEditPause</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonPause</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">ButtonComment</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">IndicatorComment</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">TextPauseMinutes</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">TextPauseSince</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act19" ve="7">
+			<code>300</code>
+			<label>No visibility changes Label</label>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%begin</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act20" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%reset</Str>
+			<Str sr="arg1" ve="3">1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act21" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%pause</Str>
+			<Str sr="arg1" ve="3">0</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act22" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%working</Str>
+			<Str sr="arg1" ve="3">0</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act23" ve="7">
+			<code>30</code>
+			<Int sr="arg0" val="500"/>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act24" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%reset</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%end</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%pause_begin</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%pause_end</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%pause_time_m</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%comment</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">No visibility changes Label</Str>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>2</op>
+					<rhs>No visibility changes from EndAt</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>65</code>
+			<Str sr="arg0" ve="3">WTT Scene</Str>
+			<Str sr="arg1" ve="3">FgStartStopButton</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_action_delete_forever</nme>
+			<tint>-1</tint>
+		</Img>
+	</Task>
+	<Task sr="task403">
+		<cdate>1682892882386</cdate>
+		<edate>1682892882386</edate>
+		<id>403</id>
+		<pri>104</pri>
+		<Action sr="act0" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">WTT Reset</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+</TaskerData>
