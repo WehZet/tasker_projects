@@ -2,6 +2,18 @@
 
 Working Time Tracker is a simple Tasker scene for tracking the working time with the possibility to additionally track pause times. After recording it sends the data to Google Sheets.
 
+## v0.5.3
+12.02.2024<br/>
+1) added progress dialoge while uploading data to spreadsheet
+
+## v0.5.2
+04.02.2024<br/>
+1) set text color to variable
+
+## v0.5.1
+02.02.2024<br/>
+1) added sending "working" and "pause" status to KLWP (KLWP variables: "wtt_w" and "wtt_p")
+
 ## v0.5.0
 14.10.2023<br/>
 1) added buttons to the notification after ending work ("Open Spreadsheet" & "Cancel Notification")<br>

@@ -6,6 +6,19 @@ The number of stored entries can be chosen at the import (project variable) and 
 Single Entries can saved in an extra table of the databas, so they will not be overwritten if the clipborad array is full.<br>
 Put the task "Clipboard Manager" into your Quick Settings and use the Clipboard Manager everywhere you want.
 
+## v2.6.3
+11.01.2024
+1) extended the show-time of entry dialogs and mulit-delete dialogs to 120s
+2) renamed "CBM Save or Delete" to "CBM Long-Tap Options"
+
+## v2.6.2
+06.01.2024
+1) bugfix
+
+## v2.6.1
+27.12.2023
+1) some little code improvement
+
 ## v2.6.0
 31.05.2023
 1) added a prompt which asks if you like to open in YouTube if the new clipboard content is a YouTube link. (original code from "konieckropka")
