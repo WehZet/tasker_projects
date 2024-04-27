@@ -1,6 +1,10 @@
 A little project to implement the greyscale mode.<br>
 On some phones it is coupled with the sleeping mode. This project can use the greyscale mode without sleeping mode.
 
+## v1.2.0
+04/2024<br/>
+1) inserted seperate task for turning on/off greyscale mode. Seperate on/off "Simulate color space" and color space mode
+
 ## v1.1.2
 1) included in the Reset Task a "accessibility_display_daltonizer_enabled" to 0 to try to Bugfix the bug where the greyscale mode don't turns off
 
