@@ -2,6 +2,10 @@
 
 Working Time Tracker is a simple Tasker scene for tracking the working time with the possibility to additionally track pause times. After recording it sends the data to Google Sheets.
 
+## v0.5.4
+05.03.2024<br/>
+1) added a function at ending work, that will get the spreadsheet ID from credentials file if project variable %spreadsheet is for some reason not set anymore
+
 ## v0.5.3
 12.02.2024<br/>
 1) added progress dialoge while uploading data to spreadsheet
